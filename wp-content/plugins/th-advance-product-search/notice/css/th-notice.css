@@ -1,0 +1,64 @@
+/*admin notice css*/
+
+.th-advance-product-search-notice-wrap{
+display:flex;
+padding: 0.5rem;
+align-items: center;
+position: relative;
+}
+.th-advance-product-search-notice-image{
+margin-right:2rem;
+}
+.th-advance-product-search-notice-wrap p{
+margin:0;
+}
+.th-advance-product-search-notice-image img{
+width:120px;
+}
+.th-advance-product-search-notice-content .th-advance-product-search-heading {
+font-size:13px;
+font-weight:bold;
+}
+.th-advance-product-search-notice-content p{
+font-size:12px;
+}
+
+.th-advance-product-search-notice-content-wrap{
+display:inline-flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+
+.th-advance-product-search-notice-content-wrap .upgradetopro-btn{
+height: 30px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #00A32A;
+    color: #fff;
+    border: 0;
+    padding: 0rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+}
+.th-advance-product-search-notice{
+    border-left-color:#FF6363;
+    margin-left: 0!important;
+}
+.th-advance-product-search-notice-content{
+    flex: 1;
+}
+.ntc-dismiss{
+    font-size: 1rem;
+    color: #787c82;
+    cursor: pointer;
+    position: absolute;
+    right: -7px;
+    top: 7px;
+    
+}
+.ntc-dismiss:hover{color:#d63638;}
