@@ -34,6 +34,10 @@ $data = apply_filters(
     wp_localize_script( 'big-store-admin-load', 'THAdmin', $data); 
 
 
+} else {
+
+    wp_enqueue_style( 'thunk-notify-css', get_template_directory_uri() . '/lib/th-option/assets/css/notify.css' );  
+
 }
 }
 function tab_constant(){
@@ -156,8 +160,7 @@ function plugin_install_button($plugin){
  * Include Welcome page content
  */
  public  function plugin_install($rplugins = 'recommend-plugins'){
-    $recommend_plugins = get_theme_support( $rplugins );
-
+       $recommend_plugins = get_theme_support( $rplugins );
        if ( is_array( $recommend_plugins ) && isset( $recommend_plugins[0] ) ){
         $pluginArr =array();
         foreach($recommend_plugins[0] as $slug=>$plugin){

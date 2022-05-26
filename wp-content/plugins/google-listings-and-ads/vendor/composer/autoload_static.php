@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
+class ComposerStaticInit38d15660cfc2aac4ec1d5030e9af2c7d
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -1027,6 +1027,7 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Resources\\CustomerUserAccess' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Resources/CustomerUserAccess.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Resources\\GeoTargetConstant' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Resources/GeoTargetConstant.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Resources\\MerchantCenterLink' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Resources/MerchantCenterLink.php',
+        'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Resources\\ShoppingPerformanceView' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Resources/ShoppingPerformanceView.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\AccountBudgetService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/AccountBudgetService.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\AccountLinkService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/AccountLinkService.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\AdGroupAdLabelService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/AdGroupAdLabelService.php',
@@ -1046,6 +1047,7 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\GeoTargetConstantService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/GeoTargetConstantService.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\GoogleAdsService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/GoogleAdsService.php',
         'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\MerchantCenterLinkService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/MerchantCenterLinkService.php',
+        'GPBMetadata\\Google\\Ads\\GoogleAds\\V9\\Services\\ShoppingPerformanceViewService' => __DIR__ . '/..' . '/googleads/google-ads-php/metadata/Google/Ads/GoogleAds/V9/Services/ShoppingPerformanceViewService.php',
         'GPBMetadata\\Google\\Api\\Annotations' => __DIR__ . '/..' . '/google/common-protos/metadata/Api/Annotations.php',
         'GPBMetadata\\Google\\Api\\Auth' => __DIR__ . '/..' . '/google/common-protos/metadata/Api/Auth.php',
         'GPBMetadata\\Google\\Api\\Backend' => __DIR__ . '/..' . '/google/common-protos/metadata/Api/Backend.php',
@@ -2055,6 +2057,7 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
         'Google\\Ads\\GoogleAds\\V9\\Resources\\Recommendation_TargetRoasOptInRecommendation' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/Recommendation_TargetRoasOptInRecommendation.php',
         'Google\\Ads\\GoogleAds\\V9\\Resources\\Recommendation_TextAdRecommendation' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/Recommendation_TextAdRecommendation.php',
         'Google\\Ads\\GoogleAds\\V9\\Resources\\RemarketingSetting' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/RemarketingSetting.php',
+        'Google\\Ads\\GoogleAds\\V9\\Resources\\ShoppingPerformanceView' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/ShoppingPerformanceView.php',
         'Google\\Ads\\GoogleAds\\V9\\Resources\\SmartCampaignSetting\\PhoneNumber' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/SmartCampaignSetting/PhoneNumber.php',
         'Google\\Ads\\GoogleAds\\V9\\Resources\\SmartCampaignSetting_PhoneNumber' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/SmartCampaignSetting_PhoneNumber.php',
         'Google\\Ads\\GoogleAds\\V9\\Resources\\ThirdPartyAppAnalyticsLinkIdentifier' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Resources/ThirdPartyAppAnalyticsLinkIdentifier.php',
@@ -2185,6 +2188,7 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
         'Google\\Ads\\GoogleAds\\V9\\Services\\Gapic\\GeoTargetConstantServiceGapicClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/Gapic/GeoTargetConstantServiceGapicClient.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\Gapic\\GoogleAdsServiceGapicClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/Gapic/GoogleAdsServiceGapicClient.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\Gapic\\MerchantCenterLinkServiceGapicClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/Gapic/MerchantCenterLinkServiceGapicClient.php',
+        'Google\\Ads\\GoogleAds\\V9\\Services\\Gapic\\ShoppingPerformanceViewServiceGapicClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/Gapic/ShoppingPerformanceViewServiceGapicClient.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GclidDateTimePair' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GclidDateTimePair.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GenerateForecastCurveRequest' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GenerateForecastCurveRequest.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GenerateForecastCurveResponse' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GenerateForecastCurveResponse.php',
@@ -2221,6 +2225,7 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
         'Google\\Ads\\GoogleAds\\V9\\Services\\GetCustomerUserAccessRequest' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GetCustomerUserAccessRequest.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GetGeoTargetConstantRequest' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GetGeoTargetConstantRequest.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GetMerchantCenterLinkRequest' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GetMerchantCenterLinkRequest.php',
+        'Google\\Ads\\GoogleAds\\V9\\Services\\GetShoppingPerformanceViewRequest' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GetShoppingPerformanceViewRequest.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GoogleAdsRow' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GoogleAdsRow.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GoogleAdsServiceClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GoogleAdsServiceClient.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\GoogleAdsServiceGrpcClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/GoogleAdsServiceGrpcClient.php',
@@ -2356,6 +2361,8 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
         'Google\\Ads\\GoogleAds\\V9\\Services\\SearchGoogleAdsResponse' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/SearchGoogleAdsResponse.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\SearchGoogleAdsStreamRequest' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/SearchGoogleAdsStreamRequest.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\SearchGoogleAdsStreamResponse' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/SearchGoogleAdsStreamResponse.php',
+        'Google\\Ads\\GoogleAds\\V9\\Services\\ShoppingPerformanceViewServiceClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/ShoppingPerformanceViewServiceClient.php',
+        'Google\\Ads\\GoogleAds\\V9\\Services\\ShoppingPerformanceViewServiceGrpcClient' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/ShoppingPerformanceViewServiceGrpcClient.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\SiteSeed' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/SiteSeed.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\SmartCampaignSuggestionInfo' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/SmartCampaignSuggestionInfo.php',
         'Google\\Ads\\GoogleAds\\V9\\Services\\SmartCampaignSuggestionInfo\\BusinessContext' => __DIR__ . '/..' . '/googleads/google-ads-php/src/Google/Ads/GoogleAds/V9/Services/SmartCampaignSuggestionInfo/BusinessContext.php',
@@ -4037,9 +4044,9 @@ class ComposerStaticInit0098100b8cfa19c320fe87984dadb402
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0098100b8cfa19c320fe87984dadb402::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0098100b8cfa19c320fe87984dadb402::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit0098100b8cfa19c320fe87984dadb402::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit38d15660cfc2aac4ec1d5030e9af2c7d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit38d15660cfc2aac4ec1d5030e9af2c7d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit38d15660cfc2aac4ec1d5030e9af2c7d::$classMap;
 
         }, null, ClassLoader::class);
     }

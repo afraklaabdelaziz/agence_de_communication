@@ -1,0 +1,26 @@
+{
+   "name":"Przykładowa automatyzacja z prośbą o recenzję dla mniejszych sklepów z bardziej osobistym podejściem do klienta",
+   "description":"Automatyzacja oparta na zdarzeniu zamówienie zrealizowane. Wysyłana, aby poprosić klienta o zrecenzowanie zamówionego produktu. Opcjonalnie, można do niej dodać opóźnienie.",
+   "event":{
+      "slug":"shopmagic_order_completed_event",
+      "data":{
+         "check_defer":"yes"
+      }
+   },
+   "filters":[
+
+   ],
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Witaj {{ customer.first_name }}, dzi\u0119kujemy za zakupy w naszym sklepie!",
+         "heading_value":"Jest jedna rzecz, o kt\u00f3r\u0105 chcieliby\u015bmy Ci\u0119 prosi\u0107...",
+         "template_type":"woocommerce",
+         "message_text":"W pierwszej kolejno\u015bci, dzi\u0119kujemy za wyb\u00f3r naszego sklepu i zam\u00f3wienie <strong>#{{ order.id }}<\/strong>.\r\n\r\nMamy nadziej\u0119, \u017ce b\u0119dziesz usatysfakcjonowany z: {{ order.products_ordered_links | template: 'unordered_list' }}\r\n\r\nProwadzimy ma\u0142y, rodzinny biznes. Ka\u017cda opinia i recenzja ma dla nas wielkie znaczenie. Je\u015bli znajdziesz chwil\u0119, prosimy o recenzj\u0119: {{ order.products_ordered_review_links | template: 'unordered_list' }}\r\n\r\nZ g\u00f3ry dzi\u0119kujemy! Je\u015bli masz zastrze\u017cenia do zam\u00f3wienia - skontaktuj si\u0119 z nami. Wystarczy, \u017ce odpowiesz na ten email.\r\n\r\nMi\u0142ego dnia,",
+         "unsubscribe":"no",
+         "_action_title":"Przyk\u0142adowa automatyzacja z pro\u015bb\u0105 o recenzj\u0119 dla mniejszych sklep\u00f3w z bardziej osobistym podej\u015bciem do klienta.",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

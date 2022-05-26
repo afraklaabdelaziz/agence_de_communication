@@ -15,7 +15,6 @@ use MailPoet\Entities\SendingQueueEntity;
 use MailPoet\Entities\StatsNotificationEntity;
 use MailPoet\Mailer\MailerFactory;
 use MailPoet\Mailer\MetaInfo;
-use MailPoet\Models\ScheduledTask;
 use MailPoet\Newsletter\Statistics\NewsletterStatisticsRepository;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Subscribers\SubscribersRepository;
@@ -183,7 +182,7 @@ class Worker {
   }
 
   private function markTaskAsFinished(ScheduledTaskEntity $task) {
-    $task->setStatus(ScheduledTask::STATUS_COMPLETED);
+    $task->setStatus(ScheduledTaskEntity::STATUS_COMPLETED);
     $task->setProcessedAt(new Carbon);
     $task->setScheduledAt(null);
     $this->entityManager->flush();

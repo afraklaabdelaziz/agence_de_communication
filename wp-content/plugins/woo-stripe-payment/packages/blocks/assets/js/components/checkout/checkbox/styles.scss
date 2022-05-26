@@ -1,0 +1,40 @@
+.wc-stripe-save-payment-method {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1em;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+
+    &:checked {
+      + svg {
+        display: block;
+        height: auto;
+      }
+    }
+  }
+
+  span {
+    margin-left: 5px;
+  }
+
+  label {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-color: white;
+    display: block;
+    border-radius: 3px;
+    border: 1px solid #bababa;
+    margin: 0;
+    padding: 0;
+  }
+
+  svg {
+    display: none;
+  }
+}

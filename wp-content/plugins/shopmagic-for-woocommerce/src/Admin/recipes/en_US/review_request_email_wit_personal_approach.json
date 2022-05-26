@@ -1,0 +1,24 @@
+{
+  "name": "Review Request email for smaller stores with personal approach",
+  "description": "Automation based on Order Completed event. Triggered to request an immediate product review. Feel free to add a delay to it, if needed.",
+  "event": {
+	"slug": "shopmagic_order_completed_event",
+	"data": {
+	  "check_defer": "yes"
+	}
+  },
+  "filters": [],
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Dear {{ customer.first_name }}, thank you for your order!",
+	  "heading_value": "There's one more thing...",
+	  "template_type": "woocommerce",
+	  "message_text": "I would like to personally thank you for your order <strong>#{{ order.id }}<\/strong>.\r\n\r\nI hope that you will be satisfied with the: {{ order.products_ordered_links | template: 'unordered_list' }}\r\n\r\nWe are running a small, family store, which relies on product reviews. Could you spare a minute and write a review of: {{ order.products_ordered_review_links | template: 'unordered_list' }}\r\n\r\nThanks in advance! If, by any reason, you won't be satisfied, do not hesitate and <strong>contact us<\/strong> immediately by replying to this email.\r\n\r\nThanks for shopping with us!",
+	  "unsubscribe": "no",
+	  "_action_title": "Instant Review Request for smaller stores with personal approach",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

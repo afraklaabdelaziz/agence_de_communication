@@ -10,15 +10,28 @@
 ?>
 <footer>
          <?php 
+         
           // top-footer 
           do_action( 'big_store_top_footer' ); 
+
           // widget-footer
 		      do_action( 'big_store_widget_footer' );
+
 		      // below-footer
-          do_action( 'big_store_below_footer' );  
+          if (function_exists( 'big_store_pro_load_plugin' ) ){
+
+            do_action( 'big_store_below_footer' );  
+
+          }else{
+
+            do_action('big_store_shop_default_bottom_footer'); 
+
+          }
+  
         ?>
      </footer> <!-- end footer -->
     </div> <!-- end bigstore-site -->
 <?php wp_footer(); ?>
 </body>
 </html>
+

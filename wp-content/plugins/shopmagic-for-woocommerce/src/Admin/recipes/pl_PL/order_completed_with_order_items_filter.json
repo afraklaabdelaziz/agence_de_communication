@@ -1,0 +1,36 @@
+{
+   "name":"Wiadomość e-mail uruchamiana na status zamówienie zrealizowane z filtrem produktów",
+   "description":"Automatyzacja ta, wyśle email z potwierdzeniem zamówienia, że zamówienie jest spakowane i gotowe do wysyłki. Zawiera opcjonalny filtr Zamówienie - Produkty.",
+   "event":{
+      "slug":"shopmagic_order_completed_event",
+      "data":{
+         "check_defer":"yes"
+      }
+   },
+   "filters":{
+      "1":{
+         "2":{
+            "data":{
+               "condition":"matches_any",
+               "products_ids":[
+
+               ]
+            },
+            "filter_slug":"shopmagic_product_purchased_filter"
+         }
+      }
+   },
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Dzi\u0119kujemy za z\u0142o\u017cenie zam\u00f3wienia #{{ order.id }}",
+         "heading_value":"Twoje zam\u00f3wienie #{{ order.id }} jest ju\u017c pakowane \ud83d\udce6 i nied\u0142ugo zostanie wys\u0142ane!",
+         "template_type":"woocommerce",
+         "message_text":"Witaj <strong>{{ customer.first_name }}<\/strong>,\r\n\r\nPoni\u017cej znajdziesz szczeg\u00f3\u0142y swojego zam\u00f3wienia:\r\n\r\n{{ order.details | plaintext: 'no' }}\r\n\r\nZgodnie z uzyskan\u0105 informacj\u0105, wy\u015blemy je do:\r\n\r\n{{ customer.name }}\r\n{{ order.shipping_address }}, {{ order.shipping_city }}\r\n\r\nDzi\u0119kujemy za zakupy w naszym sklepie!",
+         "unsubscribe":"no",
+         "_action_title":"Wiadomo\u015b\u0107 e-mail uruchamiana na status zam\u00f3wienie zrealizowane z filtrem produkt\u00f3w",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

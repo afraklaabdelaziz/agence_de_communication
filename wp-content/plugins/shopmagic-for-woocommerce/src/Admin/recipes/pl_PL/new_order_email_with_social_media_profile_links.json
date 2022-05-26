@@ -1,0 +1,26 @@
+{
+   "name":"E-mail wysyłany po złożeniu nowego zamówienia wraz z linkami do profili w mediach społecznościowych",
+   "description":"Automatyzacja, która uruchomi pierwszą wiadomość e-mail dla nowego zamówienia z możliwością dodania linków do Twoich profili w mediach społecznościowych.",
+   "event":{
+      "slug":"shopmagic_order_new_event",
+      "data":[
+
+      ]
+   },
+   "filters":[
+
+   ],
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Witaj \ud83d\udc4b w naszym sklepie!",
+         "heading_value":"Cieszymy si\u0119, \u017ce jeste\u015b z nami {{ customer.first_name }}",
+         "template_type":"woocommerce",
+         "message_text":"Cze\u015b\u0107!\r\n\r\nDzi\u0119kujemy za Twoje <strong>zam\u00f3wienie<\/strong> <strong> #{{ order.id }}<\/strong>.\r\n\r\nOto jego podsumowanie:\r\n\r\n{{ order.products_ordered | template: 'unordered_list' }}\r\n\r\nJe\u015bli masz jakie\u015b pytania, lub chcesz dokona\u0107 zmiany w Twoim zam\u00f3wieniu, odpowiedz na t\u0119 wiadomo\u015b\u0107.\r\n\r\nMo\u017cesz te\u017c \u015bledzi\u0107 nas na <a href=\"#\">Facebook<\/a> lub <a href=\"#\">Instagram<\/a>.",
+         "unsubscribe":"no",
+         "_action_title":"E-mail wysy\u0142any po z\u0142o\u017ceniu nowego zam\u00f3wienia wraz z linkami do medi\u00f3w spo\u0142eczno\u015bciowych",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

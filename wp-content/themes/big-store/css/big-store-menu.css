@@ -147,7 +147,7 @@ background-color: #2457AA;
 .menu-toggle .icon-bar{
     display: block !important;
     width: 25px;
-    height: 2px;
+    height:1px;
     background-color:#fff;
     margin:4px;
 }
@@ -184,6 +184,9 @@ ul[data-menu-style="accordion"] > li > a > .arrow:before {
     float: right;
     content: "\f105";
     font-family: 'FontAwesome';
+        width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
 }
 ul[data-menu-style="accordion"] li.menu-active > a > .arrow:before {
     content: "\f107" !important;

@@ -1,0 +1,33 @@
+{
+   "name":"E-mail powitalny. Automatyzacja na pierwsze zamówienie z produktami oznaczonymi jako cross-sells",
+   "description":"Automatyzacja, która aktywuje się dla pierwszego zamówienia danego klienta i zaproponuje produkty oznaczone jako cross-sells",
+   "event":{
+      "slug":"shopmagic_order_new_event",
+      "data":[
+
+      ]
+   },
+   "filters":{
+      "1":{
+         "2":{
+            "data":{
+               "value":"yes"
+            },
+            "filter_slug":"order_is_customers_first"
+         }
+      }
+   },
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Mi\u0142o Ci\u0119 widzie\u0107! \ud83d\udc4b\ud83c\udffb",
+         "heading_value":"Witaj, {{ customer.name }}",
+         "template_type":"woocommerce",
+         "message_text":"Witaj {{ customer.first_name }},\r\n\r\nDzi\u0119kujemy za zakupy w {{ shop.title }}. Jeste\u015bmy zaszczyceni, \u017ce jeste\u015b naszym klientem! Je\u015bli masz jakiekolwiek pytania dotycz\u0105ce Twojego zam\u00f3wienia, naszych produkt\u00f3w lub czegokolwiek zwi\u0105zanego z naszym sklepem - nie wahaj si\u0119 z nami skontaktowa\u0107.\r\n\r\nZanim si\u0119 po\u017cegnamy, rzu\u0107 jeszcze okiem na poni\u017csze produkty. S\u0105dzimy, \u017ce mog\u0105 Ci si\u0119 spodoba\u0107:\r\n\r\n{ order.cross_sells | template: 'unordered_list' }}\r\n\r\nMamy nadziej\u0119, \u017ce nied\u0142ugo zn\u00f3w nas odwiedzisz,\r\nZesp\u00f3\u0142 z {{ shop.title }}",
+         "unsubscribe":"no",
+         "_action_title":"E-mail powitalny. Automatyzacja na pierwsze zam\u00f3wienie z produktami oznaczonymi jako cross-sells",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

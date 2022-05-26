@@ -1,0 +1,10 @@
+/*!
+ * Jetpack CRM Extension: WooSync My Account Styles
+ * https://jetpackcrm.com
+ * 
+ * @since v2.7.0
+ *
+ * Copyright 2019+
+ *
+ * Date: 30 April 2019
+ */.zbs-invoice-list .paid{background:green}.zbs-invoice-list .draft{background:#999}.zbs-invoice-list .overdue{background:red}.zbs-invoice-list .unpaid{background:#d0d012}.zbs-invoice-list .status{padding:5px;color:#fff;font-weight:700}.zbs-invoice-list .tools .fa{color:#a3210b}.zbs-invoice-box{padding:50px;border:1px solid #ddd;margin-bottom:15px;background:#fff;position:relative}.zbs-invoice-box .zbs-portal-label{border-bottom:3px solid #383838;display:inline}.zbs-invoice-box .zbs-portal-value{font-size:40px;color:#000;font-weight:900}.zbs-invoice-box .zbs-invoice-paid{position:absolute;right:0;top:0;padding:30px;margin-right:10px;color:#038d24;background:#92e9a7;text-transform:uppercase;font-weight:900;margin-top:10px;padding-top:10px;padding-bottom:10px}.zbs-invoice-box .zbs-portal-inv-deets{text-align:right}.zbs-invoice-box .pay-to-name{font-size:22px;font-weight:800;color:#000}.zbs-invoice-box #zbs-business-info-wrapper,.zbs-invoice-box .zbs-invoice-pull-left{width:50%;float:left}.zbs-invoice-box #zbs-customer-info-wrapper,.zbs-invoice-box .zbs-invoice-pull-right{width:50%;float:right;text-align:right}.zbs-logo-portal{padding-top:15px;min-height:130px}

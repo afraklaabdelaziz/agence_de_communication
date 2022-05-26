@@ -1,0 +1,34 @@
+{
+  "name": "Order Completed email with Order - Items filter",
+  "description": "Confirmation email, that order is packed and ready for shipment. Includes an optional Order - Items filter.",
+  "event": {
+	"slug": "shopmagic_order_completed_event",
+	"data": {
+	  "check_defer": "yes"
+	}
+  },
+  "filters": {
+	"1": {
+	  "2": {
+		"data": {
+		  "condition": "matches_any",
+		  "products_ids": []
+		},
+		"filter_slug": "shopmagic_product_purchased_filter"
+	  }
+	}
+  },
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Thank you for your order #{{ order.id }}",
+	  "heading_value": "Your order #{{ order.id }} is packed \ud83d\udce6 and will be shipped soon!",
+	  "template_type": "woocommerce",
+	  "message_text": "Hello <strong>{{ customer.first_name }}<\/strong>,\r\n\r\nHere's your order confirmation and it's details:\r\n\r\n{{ order.details | plaintext: 'no' }}\r\n\r\nIt will be shipped to:\r\n\r\n{{ customer.name }}\r\n{{ order.shipping_address }}, {{ order.shipping_city }}\r\n\r\nThank you for shopping with us!",
+	  "unsubscribe": "no",
+	  "_action_title": "Order Completed with Order - Items filter",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

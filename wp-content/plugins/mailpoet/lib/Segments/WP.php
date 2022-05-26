@@ -49,7 +49,11 @@ class WP {
     $this->subscribersRepository = $subscribersRepository;
   }
 
-  public function synchronizeUser($wpUserId, $oldWpUserData = false) {
+  /**
+   * @param int $wpUserId
+   * @param array|false $oldWpUserData
+   */
+  public function synchronizeUser(int $wpUserId, $oldWpUserData = false): void {
     $wpUser = \get_userdata($wpUserId);
     if ($wpUser === false) return;
 
@@ -59,11 +63,17 @@ class WP {
     $currentFilter = $this->wp->currentFilter();
     // Delete
     if (in_array($currentFilter, ['delete_user', 'deleted_user', 'remove_user_from_blog'])) {
-      return $this->deleteSubscriber($subscriber);
+      $this->deleteSubscriber($subscriber);
+      return;
     }
-    return $this->createOrUpdateSubscriber($currentFilter, $wpUser, $subscriber, $oldWpUserData);
+    $this->createOrUpdateSubscriber($currentFilter, $wpUser, $subscriber, $oldWpUserData);
   }
 
+  /**
+   * @param false|Subscriber $subscriber
+   *
+   * @return void
+   */
   private function deleteSubscriber($subscriber) {
     if ($subscriber !== false) {
       // unlink subscriber from wp user and delete
@@ -72,7 +82,13 @@ class WP {
     }
   }
 
-  private function createOrUpdateSubscriber($currentFilter, $wpUser, $subscriber = false, $oldWpUserData = false) {
+  /**
+   * @param string $currentFilter
+   * @param \WP_User $wpUser
+   * @param Subscriber|false $subscriber
+   * @param array|false $oldWpUserData
+   */
+  private function createOrUpdateSubscriber(string $currentFilter, \WP_User $wpUser, $subscriber = false, $oldWpUserData = false): void {
     // Add or update
     $wpSegment = Segment::getWPSegment();
     if (!$wpSegment) return;
@@ -127,7 +143,7 @@ class WP {
         return $segment['type'] !== SegmentEntity::TYPE_WP_USERS && $segment['deleted_at'] === null;
       });
     }
-    $isWooCustomer = $this->wooHelper->isWooCommerceActive() && in_array('customer', $wpUser->roles ?? [], true);
+    $isWooCustomer = $this->wooHelper->isWooCommerceActive() && in_array('customer', $wpUser->roles, true);
     // When WP Segment is disabled force trashed state and unconfirmed status for new WPUsers without active segment
     // or who are not WooCommerce customers at the same time since customers are added to the WooCommerce list
     if ($addingNewUserToDisabledWPSegment && !$otherActiveSegments && !$isWooCustomer) {
@@ -178,7 +194,7 @@ class WP {
     }
   }
 
-  public function synchronizeUsers() {
+  public function synchronizeUsers(): bool {
     $updatedUsersEmails = $this->updateSubscribersEmails();
     $insertedUsersEmails = $this->insertSubscribers();
     $this->removeUpdatedSubscribersWithInvalidEmail(array_merge($updatedUsersEmails, $insertedUsersEmails));
@@ -193,7 +209,7 @@ class WP {
     return true;
   }
 
-  private function removeUpdatedSubscribersWithInvalidEmail($updatedEmails) {
+  private function removeUpdatedSubscribersWithInvalidEmail(array $updatedEmails): void {
     $validator = new ModelValidator();
     $invalidWpUserIds = array_map(function($item) {
       return $item['id'];
@@ -207,7 +223,7 @@ class WP {
     ORM::for_table(Subscriber::$_table)->whereIn('wp_user_id', $invalidWpUserIds)->delete_many();
   }
 
-  private function updateSubscribersEmails() {
+  private function updateSubscribersEmails(): array {
     global $wpdb;
     Subscriber::rawExecute('SELECT NOW();');
     $startTime = Subscriber::getLastStatement()->fetch(\PDO::FETCH_COLUMN);
@@ -225,10 +241,10 @@ class WP {
       ', $subscribersTable, $startTime))->findArray();
   }
 
-  private function insertSubscribers() {
+  private function insertSubscribers(): array {
     global $wpdb;
     $wpSegment = Segment::getWPSegment();
-    if (!$wpSegment) return;
+    if (!$wpSegment) return [];
     if ($wpSegment->deletedAt !== null) {
       $subscriberStatus = SubscriberEntity::STATUS_UNCONFIRMED;
       $deletedAt = 'CURRENT_TIMESTAMP()';
@@ -262,7 +278,7 @@ class WP {
     return $inserterdUserIds;
   }
 
-  private function updateFirstNames() {
+  private function updateFirstNames(): void {
     global $wpdb;
     $subscribersTable = Subscriber::$_table;
     Subscriber::rawExecute(sprintf('
@@ -275,7 +291,7 @@ class WP {
     ', $subscribersTable, $wpdb->usermeta));
   }
 
-  private function updateLastNames() {
+  private function updateLastNames(): void {
     global $wpdb;
     $subscribersTable = Subscriber::$_table;
     Subscriber::rawExecute(sprintf('
@@ -288,7 +304,7 @@ class WP {
     ', $subscribersTable, $wpdb->usermeta));
   }
 
-  private function updateFirstNameIfMissing() {
+  private function updateFirstNameIfMissing(): void {
     global $wpdb;
     $subscribersTable = Subscriber::$_table;
     Subscriber::rawExecute(sprintf('
@@ -300,7 +316,7 @@ class WP {
     ', $subscribersTable, $wpdb->users));
   }
 
-  private function insertUsersToSegment() {
+  private function insertUsersToSegment(): void {
     $wpSegment = Segment::getWPSegment();
     $subscribersTable = Subscriber::$_table;
     $wpMailpoetSubscriberSegmentTable = SubscriberSegment::$_table;
@@ -311,7 +327,7 @@ class WP {
     ', $wpMailpoetSubscriberSegmentTable, $wpSegment->id, $subscribersTable));
   }
 
-  private function removeOrphanedSubscribers() {
+  private function removeOrphanedSubscribers(): void {
     // remove orphaned wp segment subscribers (not having a matching wp user id),
     // e.g. if wp users were deleted directly from the database
     global $wpdb;

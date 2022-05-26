@@ -1,0 +1,26 @@
+{
+   "name":"Odzyskiwanie porzuconego koszyka z 3-dniową pauzą dla tego samego klienta",
+   "description":"Automatyzacja odzyskiwania porzuconego koszyka z wygodnym linkiem, który przekieruje klienta do bezpośrednio koszyka. Ma opcjonalną 3-dniową pauzę, aby zapobiec częstemu uruchamianiu automatyzacji dla tego samego klienta.",
+   "event":{
+      "slug":"cart_abandoned_event",
+      "data":{
+         "pause_period":"3"
+      }
+   },
+   "filters":[
+
+   ],
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Wygl\u0105da na to, \u017ce co\u015b zosta\u0142o w Twoim koszyku \ud83d\uded2",
+         "heading_value":"Doko\u0144cz zakupy, zanim produkty na zawsze znikn\u0105 z koszyka!",
+         "template_type":"woocommerce",
+         "message_text":"Kiedy opuszcza\u0142e\u015b nasz\u0105 stron\u0119, Tw\u00f3j koszyk by\u0142 wype\u0142niony produktami!\r\n\r\nOto, produkty kt\u00f3re w nim zosta\u0142y:\r\n\r\n{{ cart.items | template: 'unordered_list' }}\r\n\r\nKliknij {{ cart.link }}, aby b\u0142yskawicznie przenie\u015b\u0107 si\u0119 do koszyka i doko\u0144czy\u0107 zakupy.\r\n\r\nMasz pytania?\r\n\r\nNapisz do nas na adres <em>tw\u00f3j@email<\/em>",
+         "unsubscribe":"no",
+         "_action_title":"Odzyskiwanie porzuconego koszyka z 3-dniow\u0105 pauz\u0105 dla tego samego klienta",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

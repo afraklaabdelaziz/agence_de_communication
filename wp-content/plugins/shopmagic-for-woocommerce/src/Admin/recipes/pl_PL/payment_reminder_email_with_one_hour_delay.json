@@ -1,0 +1,32 @@
+{
+   "name":"Przypomnienie o płatności z 1-godzinnym opóźnieniem",
+   "description":"Wiadomość e-mail z przypomnieniem o płatności dla zamówień ze statusem oczekujący na płatności. Email zostanie wysłany 1 godzinę po tym, jak zamówienie otrzyma taki status, tylko jeśli klient nie dokończył zakupu.",
+   "event":{
+      "slug":"shopmagic_order_pending_event",
+      "data":{
+         "check_defer":"yes"
+      }
+   },
+   "filters":[
+      
+   ],
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Masz nieop\u0142acone zam\u00f3wienie {{ order.id }}",
+         "heading_value":"Witaj {{ customer.name }},",
+         "template_type":"woocommerce",
+         "message_text":"Zauwa\u017cyli\u015bmy, \u017ce masz nieop\u0142acone zam\u00f3wienie w naszym sklepie.\r\n\r\nOto szczeg\u00f3\u0142y Twojego zam\u00f3wienia:\r\n\r\n{{ order.details | plaintext: 'no' }}\r\n\r\nAby je op\u0142aci\u0107, wystarczy \u017ce klikniesz w poni\u017cszy link. Zostaniesz automatycznie przeniesiony do strony z p\u0142atno\u015bci\u0105:\r\n<p style=\"text-align: center;\"><a href=\"{{ order.payment_url }}\">Doko\u0144cz p\u0142atno\u015b\u0107<\/a><\/p>\r\nMi\u0142ego dnia,",
+         "unsubscribe":"no",
+         "_action_title":"Przypomnienie o p\u0142atno\u015bci z 1-godzinnym op\u00f3\u017anieniem",
+         "_action":"shopmagic_sendemail_action",
+         "_action_delay_nbr":1,
+         "_action_delay_step":"hours",
+         "_action_delayed":"on",
+         "_action_schedule_type":"delay",
+         "_action_variable_string":"",
+         "_action_delayed_offset_time":3600
+      }
+   ]
+}

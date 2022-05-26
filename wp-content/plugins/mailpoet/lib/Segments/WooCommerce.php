@@ -81,7 +81,7 @@ class WooCommerce {
     $this->connection = $connection;
   }
 
-  public function shouldShowWooCommerceSegment() {
+  public function shouldShowWooCommerceSegment(): bool {
     $isWoocommerceActive = $this->woocommerceHelper->isWooCommerceActive();
     $woocommerceUserExists = $this->subscribersRepository->woocommerceUserExists();
 
@@ -91,7 +91,7 @@ class WooCommerce {
     return true;
   }
 
-  public function synchronizeRegisteredCustomer($wpUserId, $currentFilter = null) {
+  public function synchronizeRegisteredCustomer(int $wpUserId, ?string $currentFilter = null): bool {
     $wcSegment = $this->segmentsRepository->getWooCommerceSegment();
 
     $currentFilter = $currentFilter ?: $this->wp->currentFilter();
@@ -141,7 +141,7 @@ class WooCommerce {
     return true;
   }
 
-  public function synchronizeGuestCustomer($orderId) {
+  public function synchronizeGuestCustomer(int $orderId): void {
     $wcOrder = $this->woocommerceHelper->wcGetOrder($orderId);
 
     if (!$wcOrder instanceof \WC_Order) return;
@@ -154,7 +154,7 @@ class WooCommerce {
     $email = $this->insertSubscriberFromOrder($orderId, $status);
 
     if (empty($email)) {
-      return false;
+      return;
     }
     $subscriber = $this->subscribersRepository->findOneBy(['email' => $email]);
 
@@ -229,7 +229,7 @@ class WooCommerce {
     return $charset1 === $charset2;
   }
 
-  private function markRegisteredCustomers() {
+  private function markRegisteredCustomers(): void {
     // Mark WP users having a customer role as WooCommerce subscribers
     global $wpdb;
     $subscribersTable = $this->entityManager->getClassMetadata(SubscriberEntity::class)->getTableName();
@@ -492,9 +492,10 @@ class WooCommerce {
     // Insert WC customer emails to a temporary table and ensure matching collations
     // between MailPoet and WooCommerce emails for left join to use an index
     $tmpTableName = Env::$dbPrefix . 'tmp_wc_emails';
-    $collation = '';
     if ($this->needsCollationChange()) {
       $collation = "COLLATE $this->mailpoetEmailCollation";
+    } else {
+      $collation = "COLLATE $this->wpPostmetaValueCollation";
     }
 
     $this->connection->executeQuery("

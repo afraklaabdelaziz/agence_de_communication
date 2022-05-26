@@ -281,7 +281,7 @@ if (!function_exists('big_store_below_header_markup')) {
                 </nav>
               <?php } else {
 
-                echo big_store_th_advance_product_search();
+              big_store_th_advance_product_search();
                 
               } ?>
             </div>
@@ -299,20 +299,19 @@ if (!function_exists('big_store_below_header_markup')) {
                           if (wp_is_mobile() !== true) :
 
                       ?>
-                            <div class="cart-icon">
-                              <?php
-                              do_action('open_cart_count');
-                              do_action('big_store_woo_cart');
-                              ?>
-                            </div>
+
+                            
+                            <?php big_store_th_cart();?>
+                           
+
+                             
+            
                           <?php endif;
                         } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-                          <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
+
+                          
+                          <?php big_store_th_cart();?>
+ 
                       <?php  }
                       } ?>
                     </div>
@@ -389,7 +388,7 @@ if (!function_exists('big_store_main_header_markup')) {
                   </div>
                 </nav>
               <?php } else {
-                echo big_store_th_advance_product_search();
+                big_store_th_advance_product_search();
               } ?>
             </div>
             <div class="main-header-col3">
@@ -410,7 +409,7 @@ if (!function_exists('big_store_main_header_markup')) {
 
             <div class="main-header-col2">
               <?php
-                echo big_store_th_advance_product_search();
+                big_store_th_advance_product_search();
                 ?>
             </div>
 
@@ -432,16 +431,12 @@ if (!function_exists('big_store_main_header_markup')) {
                 <?php } ?>
                 <div class="header-support-wrap">
                   <div class="header-support-icon">
-                    <?php if (class_exists('WPCleverWoosw')) { ?>
-                      <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
-                    <?php } ?>
-                    <?php if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
+                    <?php if( class_exists( 'WooCommerce' ) &&get_theme_mod('big_store_whislist_mobile_disable',false) != true){ ?>
                       <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i><span><?php _e('Wishlist', 'big-store'); ?></span></a>
+                        <span class="th-icon th-icon-heartline"></span><span><?php _e('Wishlist', 'big-store'); ?></span></a>
                     <?php } ?>
 
-                    <?php if (class_exists('WooCommerce')) {
+                    <?php if(class_exists( 'WooCommerce' ) && get_theme_mod('big_store_account_mobile_disable',false) != true){
                       big_store_account();
                     } ?>
 
@@ -449,25 +444,26 @@ if (!function_exists('big_store_main_header_markup')) {
                   <div class="thunk-icon">
 
                     <?php if (class_exists('WooCommerce')) {
-                      if (get_theme_mod('big_store_cart_mobile_disable') == true) {
-                        if (wp_is_mobile() !== true) :
-
+                      if (wp_is_mobile()) {
+                      if (get_theme_mod('big_store_cart_mobile_disable',false) !== true) {
                     ?>
-                          <div class="cart-icon">
-                            <?php
-                            do_action('open_cart_count');
-                            do_action('big_store_woo_cart');
-                            ?>
-                          </div>
-                        <?php endif;
-                      } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-                        <div class="cart-icon">
-                          <?php
-                          do_action('open_cart_count');
-                          do_action('big_store_woo_cart');
-                          ?>
-                        </div>
-                    <?php  }
+                            
+                            <?php big_store_th_cart(); ?>
+                           
+                          
+
+                          
+                        <?php 
+                      }}
+                      else{ ?>
+
+                                
+                               <?php big_store_th_cart(); ?>
+                          
+
+                        
+                        
+                   <?php   } 
                     } ?>
                   </div>
 
@@ -482,7 +478,7 @@ if (!function_exists('big_store_main_header_markup')) {
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
         <?php 
-        echo big_store_th_advance_product_search();
+        big_store_th_advance_product_search();
         ?>
       </div>
     </div>
@@ -529,20 +525,17 @@ function big_store_main_header_optn()
               if (wp_is_mobile() !== true) :
 
           ?>
-                <div class="cart-icon">
-                  <?php
-                  do_action('open_cart_count');
-                  do_action('big_store_woo_cart');
-                  ?>
-                </div>
+                   
+                   <?php big_store_th_cart(); ?>
+                          
               <?php endif;
             } elseif (get_theme_mod('big_store_cart_mobile_disable') == false) { ?>
-              <div class="cart-icon">
-                <?php
-                do_action('open_cart_count');
-                do_action('big_store_woo_cart');
-                ?>
-              </div>
+
+                   
+                     <?php big_store_th_cart();?>
+
+                     
+                         
           <?php  }
           } ?>
         </div>
@@ -590,16 +583,26 @@ function big_store_header_icon()
     <div class="header-icon">
       <?php
       if (get_theme_mod('big_store_main_header_layout') == 'mhdrtwo') { ?>
-        <a class="prd-search" href="#"><i class="fa fa-search"></i></a>
+
+        <a class="prd-search-icon" ><?php  if ( shortcode_exists('tapsp') ){
+
+          echo do_shortcode('[tapsp layout="icon_style"]'); 
+
+        }elseif( shortcode_exists('th-aps') ){
+
+              echo do_shortcode('[th-aps layout="icon_style"]'); 
+
+        }?></span></a>
+
       <?php }
       big_store_account();
-      if (class_exists('WPCleverWoosw')) { ?>
+      if(class_exists('WPCleverWoosw')){ ?>
         <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
+        <span class="th-icon th-icon-heartline"></span></a>
       <?php }
       if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
         <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>">
-          <i class="fa fa-heart-o" aria-hidden="true"></i></a>
+        <span class="th-icon th-icon-heartline"></span></a></a>
       <?php }
 
 
@@ -685,28 +688,34 @@ if (!function_exists('big_store_sticky_header_markup')) {
             <div class="thunk-icon">
 
               <div class="header-icon">
-                <a class="prd-search" href="#"><i class="fa fa-search"></i></a>
+                <a class="prd-search-icon" ><?php  if ( shortcode_exists('tapsp') ){
+
+          echo do_shortcode('[tapsp layout="icon_style"]'); 
+
+        }elseif( shortcode_exists('th-aps') ){
+
+              echo do_shortcode('[th-aps layout="icon_style"]'); 
+              
+        }?></span></a>
                 <?php
                 if (class_exists('WPCleverWoosw')) {
                 ?>
-                  <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                  <a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><span class="th-icon th-icon-heartline"></span></a>
                 <?php }
                 if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) {
                 ?>
-                  <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                  <a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><span class="th-icon th-icon-heartline"></span></a>
                 <?php }
                 if (class_exists('WooCommerce')) {
                   big_store_account();
                 }
                 ?>
               </div>
+              
               <?php if (class_exists('WooCommerce')) { ?>
-                <div class="cart-icon">
-                  <?php
-                  do_action('open_cart_count');
-                  do_action('big_store_woo_cart');
-                  ?>
-                </div>
+
+                       <?php big_store_th_cart(); ?>
+                           
               <?php  } ?>
             </div>
           </div>
@@ -718,7 +727,7 @@ if (!function_exists('big_store_sticky_header_markup')) {
       <div class="container">
         <div class="search-close"><a class="search-close-btn"></a></div>
         <?php 
-        echo big_store_th_advance_product_search();
+        big_store_th_advance_product_search();
         ?>
       </div>
     </div>
@@ -738,34 +747,36 @@ function bigstore_mobile_navbar()
     <div id="bigstore-mobile-bar">
       <ul>
 
-        <li><a class="gethome" href="<?php echo esc_url(get_home_url()); ?>"><i class="icon below fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a class="gethome" href="<?php echo esc_url(get_home_url()); ?>"><span class="th-icon th-icon-home"></span></a></li>
         <?php
         if (class_exists('WPCleverWoosw')) { ?>
-          <li><a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+          <li><a class="whishlist" href="<?php echo esc_url(WPcleverWoosw::get_url()); ?>"><span class="th-icon th-icon-heartline"></span></a></li>
         <?php }
         if (class_exists('YITH_WCWL') && (!class_exists('WPCleverWoosw'))) { ?>
-          <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+          <li><a class="whishlist" href="<?php echo esc_url(big_store_whishlist_url()); ?>"><span class="th-icon th-icon-heartline"></span></a></li>
         <?php } ?>
         <li>
           <?php
          if(is_plugin_active( 'themehunk-megamenu-plus/themehunk-megamenu.php')) { 
+          
          big_store_main_nav_menu();
+
             }else{  ?>
             
              <a href="#" class="menu-btn" id="mob-menu-btn">
 
-            <i class="icon fa fa-bars" aria-hidden="true"></i>
+            <div class="btn">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </div>
             
           </a>
        <?php  }?>
 
         </li>
         <li><?php big_store_account(); ?></li>
-        <li><?php
-            do_action('open_cart_count');
-            ?>
-        </li>
-
+        
       </ul>
     </div>
   <?php }
@@ -845,17 +856,73 @@ function big_store_cart_mobile_panel()
 }
 add_action('big_store_below_header', 'big_store_cart_mobile_panel');
 
-//********************************
+//********************************//
 //th advance product search 
-//*******************************
+//*******************************//
 function big_store_th_advance_product_search(){
-  if ( class_exists('TH_Advance_Product_Search') ){
-                echo do_shortcode('[th-aps]');
-              } elseif ( !class_exists('TH_Advance_Product_Search') && is_user_logged_in()) {
-                $url = admin_url('themes.php?page=thunk_started&searchp');
+
+              if ( shortcode_exists('th-aps') ){
+
+                 echo do_shortcode('[th-aps]');
+
+                }elseif ( shortcode_exists('tapsp') ){
+
+                 echo do_shortcode('[tapsp]');
+
+                }elseif( !shortcode_exists('th-aps') && !shortcode_exists('tapsp') && is_user_logged_in()){
+
+                $url = admin_url('themes.php?page=thunk_started&th-tab=recommended-plugin');
+
                 $pro_url =admin_url('plugin-install.php?s=th%20advance%20product%20search&tab=search&type=term');
+
                 $url = (function_exists("big_store_pro_load_plugin"))?$pro_url:$url;
 
-                      echo '<a href="'.$url.'" target="_blank" class="plugin-active-msg">'.__('Please Install "th advance product search" Plugin','big-store').'</a>';
-                    }
+                ?>
+
+                <a target="_blank" class="plugin-active-msg" href="<?php echo esc_url($url);?>">
+
+                  <?php _e('Please Install "th advance product search" Plugin','big-store');?>
+                  
+                </a>
+
+
+                <?php      
+
+            }
+}
+
+//********************************//
+//th woo cart 
+//*******************************//
+
+function big_store_th_cart(){
+
+  if ( shortcode_exists('taiowc') ){
+
+                echo do_shortcode('[taiowc]');
+
+              }elseif ( shortcode_exists('taiowcp') ){
+
+                echo do_shortcode('[taiowcp]');
+
+              }elseif ( !shortcode_exists('taiowc') && !shortcode_exists('taiowcp') && is_user_logged_in()) {
+
+                $url = admin_url('themes.php?page=thunk_started&th-tab=recommended-plugin');
+
+                $pro_url =admin_url('plugin-install.php?s=th%20all%20in%20one%20woo%20cart&tab=search&type=term');
+
+                $url = (function_exists("big_store_pro_load_plugin"))?$pro_url:$url;
+
+                ?>
+
+                <a target="_blank" class="cart-plugin-active-msg" href="<?php echo esc_url($url);?>">
+
+                  <?php _e('Add Cart','big-store');?>
+                  
+                </a>
+
+
+                <?php      
+
+            }
 }

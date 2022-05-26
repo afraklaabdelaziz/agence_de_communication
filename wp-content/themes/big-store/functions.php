@@ -70,6 +70,8 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
         add_theme_support( 'responsive-embeds' );
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+		// Remove theme support for widget block editor
+		remove_theme_support( 'widgets-block-editor' );
 		/**
 		 * Add support for core custom logo.
 		 */
@@ -114,6 +116,16 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
             'img' => 'icon-128x128.gif',
             'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
             ),
+            'th-all-in-one-woo-cart' => array(
+                 'name' => esc_html__( 'TH All In One Woo Cart', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+             ),
+            'th-product-compare' => array(
+                 'name' => esc_html__( 'TH Product Compare', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-product-compare/th-product-compare.php',
+             ),
             'th-variation-swatches' => array(
                 'name' => esc_html__( 'TH Variation Swatches', 'big-store' ),
                  'img' => 'icon-128x128.gif',
@@ -140,17 +152,7 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                   'img' => 'icon-128x128.jpg',
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
              ),
-            'yith-woocommerce-compare' => array(
-                 'name' => esc_html__( 'YITH WooCommerce Compare', 'big-store' ),
-                  'img' => 'icon-128x128.jpg',
-                 'active_filename' => 'yith-woocommerce-compare/init.php',
-             ),
-
-            'themehunk-megamenu-plus' => array(
-                'name' => esc_html__( 'ThemeHunk Megamenu – Menu builder', 'big-store' ),
-                'img' => 'icon-128x128.png',
-                'active_filename' => 'themehunk-megamenu-plus/themehunk-megamenu.php',
-            ), 
+            
             
 
         ) );
@@ -173,6 +175,18 @@ define( 'BIG_STORE_THEME_SETTINGS', 'big-store-settings' );
                 'img' => 'icon-128x128.png',
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
+            
+            'th-advance-product-search' => array(
+            'name' => esc_html__( 'TH Advance Product Search', 'big-store' ),
+            'img' => 'icon-128x128.gif',
+            'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+            ),
+
+            'th-all-in-one-woo-cart' => array(
+                 'name' => esc_html__( 'TH All In One Woo Cart', 'big-store' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+             ),
 
         ));
 
@@ -317,6 +331,7 @@ function big_store_scripts(){
 	// enqueue css
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	wp_enqueue_style( 'font-awesome-th', BIG_STORE_THEME_URI . 'third-party/fonts/font-awesome/css/font-awesome.css', '', BIG_STORE_THEME_VERSION );
+	wp_enqueue_style( 'th-icon', BIG_STORE_THEME_URI . 'third-party/fonts/th-icon/style.css', '', BIG_STORE_THEME_VERSION );
 	wp_enqueue_style( 'animate', BIG_STORE_THEME_URI . 'css/animate.css','',BIG_STORE_THEME_VERSION);
 	wp_enqueue_style( 'owl.carousel-css', BIG_STORE_THEME_URI . 'css/owl.carousel.css','',BIG_STORE_THEME_VERSION);
 	wp_enqueue_style( 'big-store-pro-menu', BIG_STORE_THEME_URI . 'css/big-store-menu.css','',BIG_STORE_THEME_VERSION);
@@ -329,9 +344,9 @@ function big_store_scripts(){
 	wp_add_inline_style('big-store-style', big_store_custom_style());
 	
     //enqueue js
-    wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
-    wp_enqueue_script( 'jquery-ui-autocomplete',array( 'jquery' ),'',true );
+    
     wp_enqueue_script('imagesloaded');
+
     wp_enqueue_script('big-store-menu-js', BIG_STORE_THEME_URI .'js/big-store-menu.js', array( 'jquery' ), '1.0.0', true );
    
     wp_enqueue_script('owl.carousel-js', BIG_STORE_THEME_URI .'js/owl.carousel.js', array( 'jquery' ), '1.0.1', true );
@@ -340,8 +355,8 @@ function big_store_scripts(){
 
     wp_enqueue_script( 'big-store-custom-js', BIG_STORE_THEME_URI .'js/big-store-custom.js', array( 'jquery' ), BIG_STORE_THEME_VERSION , true );
      $bigstorelocalize = array(
-     			'page_tt_enable' => get_theme_mod('big_store_page_tp_enable'),
-     			'header_tt_enable' => get_theme_mod('big_store_hdr_tp_enable'),
+     			'page_tt_enable' => get_theme_mod('big_store_page_tp_enable', false),
+     			'header_tt_enable' => get_theme_mod('big_store_hdr_tp_enable', false),
      			'tt_account' =>  get_theme_mod( 'big_store_account_tooltip_txt', __( 'Account', 'big-store' )),
      			'tt_add_to_cart' =>  get_theme_mod( 'big_store_add_to_cart_tooltip_txt', __( 'Add To Cart', 'big-store' )),
      			'tt_wishlist' =>  get_theme_mod( 'big_store_wishlist_tooltip_txt', __( 'Wishlist', 'big-store' )),

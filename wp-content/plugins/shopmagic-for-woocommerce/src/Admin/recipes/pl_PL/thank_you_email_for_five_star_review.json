@@ -1,0 +1,34 @@
+{
+   "name":"Email z podziękowaniem za 5-gwiazdkową recenzję z kuponem",
+   "description":"Automatyczny e-mail, dzięki któremu podziękujesz klientowi za recenzję produktu. Automatyzacja ta, uruchomi siętylko w przypadku wystawienia 5-gwiazdkowej recenzji. Zawiera opcjonalny kod rabatowy.",
+   "event":{
+      "slug":"review_event_published",
+      "data":[
+
+      ]
+   },
+   "filters":{
+      "1":{
+         "2":{
+            "data":{
+               "condition":"is",
+               "value":"5"
+            },
+            "filter_slug":"review_product_rating"
+         }
+      }
+   },
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"\u2b50 Dzi\u0119kujemy za Twoj\u0105 ocen\u0119! \u2b50",
+         "heading_value":"Twoja opinia wiele dla nas znaczy.",
+         "template_type":"woocommerce",
+         "message_text":"Drogi <strong>{{ customer.first_name }}<\/strong>,\r\n\r\nJeste\u015bmy zachwyceni Twoimi s\u0142owami i faktem, \u017ce wystawi\u0142e\u015b nam <strong>5-gwiazdkow\u0105<\/strong> ocen\u0119! To wiele dla nas znaczy.\r\n\r\nW zamian mamy te\u017c co\u015b dla Ciebie. Oto <strong>10% kupon rabatowy<\/strong>, kt\u00f3ry mo\u017cesz wykorzysta\u0107 w naszym sklepie przy nast\u0119pnym zakupie.\r\n<p style=\"text-align: center;\"><strong>{{ shop.coupon }}<\/strong><\/p>\r\nZ podrowieniami,",
+         "unsubscribe":"no",
+         "_action_title":"Email z podzi\u0119kowaniem za 5-gwiazdkow\u0105 recenzj\u0119 z kuponem",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

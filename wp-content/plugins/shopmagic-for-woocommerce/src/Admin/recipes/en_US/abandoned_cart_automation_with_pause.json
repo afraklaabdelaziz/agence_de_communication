@@ -1,0 +1,24 @@
+{
+  "name": "Abandoned Cart with 3 day pause for the same customer",
+  "description": "Cart recovery automation with handy link which will redirect customer to the cart. It has an optional 3-day pause to prevent it from triggering to often to the same customer.",
+  "event": {
+	"slug": "cart_abandoned_event",
+	"data": {
+	  "pause_period": "3"
+	}
+  },
+  "filters": [],
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Looks like your cart \ud83d\uded2 is not empty",
+	  "heading_value": "You left something behind...",
+	  "template_type": "woocommerce",
+	  "message_text": "Your cart wasn't empty when you left our site, so we saved it for you.\r\n\r\nHere's what's still in your cart:\r\n\r\n{{ cart.items | template: 'unordered_list' }}\r\n\r\nYou can click on {{ cart.link }} and complete your order immediately!\r\n\r\nQuestions? Concerns?\r\n\r\nContact us <em>your@email<\/em>\r\n\r\n&nbsp;",
+	  "unsubscribe": "no",
+	  "_action_title": "Abandoned Cart with 3 day pause for the same customer",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

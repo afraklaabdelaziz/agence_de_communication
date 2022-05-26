@@ -232,6 +232,7 @@
                      
                     //sticky
                     $('#menu-btn-stk').click(function (e){
+                       
                        e.preventDefault();
                        $('body').addClass('sticky-mobile-menu-active');
                        $('.sider.main').addClass('big-store-menu-hide');

@@ -40,6 +40,7 @@ use Google\Ads\GoogleAds\V9\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V9\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V9\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V9\Services\MerchantCenterLinkServiceClient;
+use Google\Ads\GoogleAds\V9\Services\ShoppingPerformanceViewServiceClient;
 
 /**
  * Contains service client factory methods.
@@ -266,5 +267,13 @@ trait ServiceClientFactoryTrait
     public function getMerchantCenterLinkServiceClient(): MerchantCenterLinkServiceClient
     {
         return new MerchantCenterLinkServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ShoppingPerformanceViewServiceClient
+     */
+    public function getShoppingPerformanceViewServiceClient(): ShoppingPerformanceViewServiceClient
+    {
+        return new ShoppingPerformanceViewServiceClient($this->getGoogleAdsClientOptions());
     }
 }

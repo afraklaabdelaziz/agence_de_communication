@@ -1,0 +1,40 @@
+{
+  "name": "One-time Review Request with 7 day delay",
+  "description": "Automation with review request, which will be sent only once to specific customer. It has a built-in 7-day day delay, to ensure that customer get acquainted with a product.",
+  "event": {
+	"slug": "shopmagic_order_completed_event",
+	"data": {
+	  "check_defer": "yes"
+	}
+  },
+  "filters": {
+	"1": {
+	  "2": {
+		"data": {
+		  "condition": "less_than",
+		  "value": "2"
+		},
+		"filter_slug": "customer_automation_count"
+	  }
+	}
+  },
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "We'd love to hear from you!",
+	  "heading_value": "How was it? We'd love to know!",
+	  "template_type": "woocommerce",
+	  "message_text": "Hello <strong>{{ customer.first_name }}<\/strong>,\r\n\r\nMost likely, {{ order.products_ordered | template: 'comma_separated_list' }} are safe in your hands.\r\n\r\nWhat do you think about it? You like it? Maybe there's something we can improve?\r\n\r\nContact us or <strong>leave a review<\/strong>. We'd love to hear your feedback.\r\n\r\n{{ order.products_ordered_review_links | template: 'grid_2_col' }}\r\n\r\nSee you next time!",
+	  "unsubscribe": "no",
+	  "_action_title": "One-time Review Request with 7 day delay",
+	  "_action": "shopmagic_sendemail_action",
+	  "_action_delay_nbr": 7,
+	  "_action_delay_step": "days",
+	  "_action_delayed": "on",
+	  "_action_schedule_type": "delay",
+	  "_action_variable_string": "",
+	  "_action_delayed_offset_time": 604800
+	}
+  ]
+}

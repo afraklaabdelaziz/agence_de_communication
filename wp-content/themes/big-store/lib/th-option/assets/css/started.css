@@ -498,3 +498,7 @@ display: flex;
    padding: 1%;
 }
 }
+
+.notice.notice-success.is-dismissible.th-theme-notice {
+    display: none;
+}

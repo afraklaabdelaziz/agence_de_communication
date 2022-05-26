@@ -1,0 +1,26 @@
+{
+   "name":"Manualna automatyzacja z ofertą specjalną oraz kuponem rabatowym.",
+   "description":"Przykład manualnej akcji. Może służyć jako przypomnienie wysyłane do nieaktywnych klientów lub nagradzanie tych najbardziej lojalnych.",
+   "event":{
+      "slug":"shopmagic_order_manual_trigger",
+      "data":{
+         "manual":"manual"
+      }
+   },
+   "filters":[
+
+   ],
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Dzi\u0119kujemy, \u017ce jeste\u015b z nami \u2764\ufe0f",
+         "heading_value":"Oto Twoje 20% zni\u017cki na ca\u0142y asortyment naszego sklepu!",
+         "template_type":"woocommerce",
+         "message_text":"Cze\u015b\u0107 {{ customer.first_name }},\r\n\r\nCieszymy si\u0119, \u017ce jeste\u015b cz\u0119\u015bci\u0105 naszej spo\u0142eczno\u015bci. Cieszymy si\u0119 tak bardzo, \u017ce przygotowali\u015bmy dla Ciebie co\u015b specjalnego. Jednorazowy <strong>20% kupon rabatowy<\/strong> na ka\u017cdy produkt dost\u0119pny w naszym sklepie! Znajdziesz go poni\u017cej:\r\n<p style=\"text-align: center;\"><strong>{{ shop.coupon }}<\/strong><\/p>\r\nJe\u015bli nie wiesz jak skorzysta\u0107 z kupony, lub masz jakie\u015b dodatkowe pytania, odwied\u017a nasze <a href=\"#\">Centrum Pomocy<\/a>.\r\n\r\nDzi\u0119kujemy!",
+         "unsubscribe":"no",
+         "_action_title":"Manualna automatyzacja z ofert\u0105 specjaln\u0105 oraz kuponem rabatowym.",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

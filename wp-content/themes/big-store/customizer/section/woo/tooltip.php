@@ -80,7 +80,7 @@ $wp_customize->add_setting('big_store_account_tooltip_txt', array(
     $wp_customize->add_control('big_store_account_tooltip_txt', array(
             'type'        => 'text',
             'section'     => 'big-store-woo-tooltip-page',
-            'label'       => __( 'Add To Cart Tooltip Text', 'big-store' ),
+            'label'       => __( 'Account Tooltip Text', 'big-store' ),
             'settings' => 'big_store_account_tooltip_txt',
              'priority'   =>11,
             
@@ -164,9 +164,6 @@ $wp_customize->add_setting('big_store_account_tooltip_txt', array(
         )
     );
 
-
-
-
 /****************/
 // doc link
 /****************/
@@ -181,4 +178,3 @@ $wp_customize->add_control(new Big_Store_Misc_Control( $wp_customize, 'big_store
         'description' => esc_html__( 'To know more go with this', 'big-store' ),
         'priority'   =>100,
     )));
-    

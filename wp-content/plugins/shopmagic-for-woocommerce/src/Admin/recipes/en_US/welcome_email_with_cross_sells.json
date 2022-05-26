@@ -1,0 +1,33 @@
+{
+   "name":"Welcome email. First order with cross-sell placeholder",
+   "description":"Welcome email which activates for the first customer's order and contains products marked as cross-sells",
+   "event":{
+      "slug":"shopmagic_order_new_event",
+      "data":[
+
+      ]
+   },
+   "filters":{
+      "1":{
+         "2":{
+            "data":{
+               "value":"yes"
+            },
+            "filter_slug":"order_is_customers_first"
+         }
+      }
+   },
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Welcome on board! \ud83d\udc4b\ud83c\udffb",
+         "heading_value":"Hi {{ customer.name }}, it's nice to meet you.",
+         "template_type":"woocommerce",
+         "message_text":"Welcome <strong>{{ customer.first_name }}<\/strong>,\r\n\r\nThanks for shopping with us at {{ shop.title }}. We're honored to have you as our customer!\r\n\r\nIf you have any questions about your order, our products or anything related to our store - do not hesitate to contact us.\r\n\r\nBefore we say goodbye, take a look at these great products:\r\n\r\n{{ order.cross_sells | template: 'unordered_list' }}\r\n\r\nWe hope to see you soon,\r\nYour friends at <strong>{{ shop.title }}<\/strong>",
+         "unsubscribe":"no",
+         "_action_title":"Welcome email. First order with cross-sell placeholder",
+		 "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

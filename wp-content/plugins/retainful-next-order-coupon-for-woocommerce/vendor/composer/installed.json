@@ -1,0 +1,175 @@
+[
+    {
+        "name": "jaybizzle/crawler-detect",
+        "version": "v1.2.110",
+        "version_normalized": "1.2.110.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+            "reference": "f9d63a3581428fd8a3858e161d072f0b9debc26f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/f9d63a3581428fd8a3858e161d072f0b9debc26f",
+            "reference": "f9d63a3581428fd8a3858e161d072f0b9debc26f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8|^5.5|^6.5|^9.4"
+        },
+        "time": "2021-12-07T18:35:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Jaybizzle\\CrawlerDetect\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mark Beech",
+                "email": "m@rkbee.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+        "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+        "keywords": [
+            "crawler",
+            "crawler detect",
+            "crawler detector",
+            "crawlerdetect",
+            "php crawler detect"
+        ]
+    },
+    {
+        "name": "jaybizzle/laravel-crawler-detect",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/JayBizzle/Laravel-Crawler-Detect.git",
+            "reference": "e39b536fb5e4f21a49328e83a2ab26f0b64b06f7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/JayBizzle/Laravel-Crawler-Detect/zipball/e39b536fb5e4f21a49328e83a2ab26f0b64b06f7",
+            "reference": "e39b536fb5e4f21a49328e83a2ab26f0b64b06f7",
+            "shasum": ""
+        },
+        "require": {
+            "jaybizzle/crawler-detect": "1.*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "orchestra/testbench": "3.1.*",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2017-06-01T20:29:30+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Jaybizzle\\LaravelCrawlerDetect\\LaravelCrawlerDetectServiceProvider"
+                ],
+                "aliases": {
+                    "Crawler": "Jaybizzle\\LaravelCrawlerDetect\\Facades\\LaravelCrawlerDetect"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Jaybizzle\\LaravelCrawlerDetect\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mark Beech",
+                "email": "mbeech@mark-beech.co.uk"
+            }
+        ],
+        "description": "A Laravel package to detect web crawlers via the user agent",
+        "homepage": "http://github.com/JayBizzle/Laravel-Crawler-Detect",
+        "keywords": [
+            "bot",
+            "crawler",
+            "crawler detect",
+            "crawler detector",
+            "crawlerdetect",
+            "detect",
+            "laravel",
+            "php crawler detect",
+            "spider",
+            "user-agent"
+        ]
+    },
+    {
+        "name": "vlucas/valitron",
+        "version": "v1.4.10",
+        "version_normalized": "1.4.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vlucas/valitron.git",
+            "reference": "5ebd5d7af82cc0a9d798e816a2ecad63f1b59ceb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vlucas/valitron/zipball/5ebd5d7af82cc0a9d798e816a2ecad63f1b59ceb",
+            "reference": "5ebd5d7af82cc0a9d798e816a2ecad63f1b59ceb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": ">=4.8.35"
+        },
+        "suggest": {
+            "ext-mbstring": "It can support the multiple bytes string length."
+        },
+        "time": "2021-07-08T16:18:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Valitron\\": "src/Valitron"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Vance Lucas",
+                "email": "vance@vancelucas.com",
+                "homepage": "https://www.vancelucas.com"
+            }
+        ],
+        "description": "Simple, elegant, stand-alone validation library with NO dependencies",
+        "homepage": "https://github.com/vlucas/valitron",
+        "keywords": [
+            "valid",
+            "validation",
+            "validator"
+        ],
+        "funding": [
+            {
+                "url": "https://tidelift.com/funding/github/packagist/vlucas/valitron",
+                "type": "tidelift"
+            }
+        ]
+    }
+]

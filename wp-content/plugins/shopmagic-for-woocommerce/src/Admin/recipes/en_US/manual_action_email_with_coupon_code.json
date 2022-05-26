@@ -1,0 +1,24 @@
+{
+  "name": "One-time manual special offer email with coupon code",
+  "description": "Example of manual automation. It can be used to wake inactive users or to reward your most loyal customers.",
+  "event": {
+	"slug": "shopmagic_order_manual_trigger",
+	"data": {
+	  "manual": "manual"
+	}
+  },
+  "filters": [],
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Thank you for being our customer \u2764\ufe0f",
+	  "heading_value": "Get 20% off for all our products!",
+	  "template_type": "woocommerce",
+	  "message_text": "Hi {{ customer.first_name }}\r\n\r\nWe're glad that you are part of our community. Actually, we are so happy that we prepared something special for you. One-time <strong>20% discount<\/strong> coupon code for every product available in our store. You will find it below:\r\n<p style=\"text-align: center;\"><strong>{{ shop.coupon }}<\/strong><\/p>\r\nIf you have any questions how to apply your Coupon Code, visit our <a href=\"#\">Help Center<\/a>.\r\n\r\nThanks,",
+	  "unsubscribe": "no",
+	  "_action_title": "One-time manual special offer email with coupon code",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

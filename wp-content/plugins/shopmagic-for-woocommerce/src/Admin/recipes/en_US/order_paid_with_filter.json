@@ -1,0 +1,34 @@
+{
+  "name": "Order Paid with Order - Items filter and {{ order.details }} placeholder",
+  "description": "Payment confirmation email, triggered when order receives processing or completed status. It includes an optional filter to limit its usage to a specified product.",
+  "event": {
+	"slug": "shopmagic_order_status_paid",
+	"data": {
+	  "check_defer": "yes"
+	}
+  },
+  "filters": {
+	"1": {
+	  "2": {
+		"data": {
+		  "condition": "matches_any",
+		  "products_ids": []
+		},
+		"filter_slug": "shopmagic_product_purchased_filter"
+	  }
+	}
+  },
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "This is payment confirmation for order #{{ order.id }}",
+	  "heading_value": "Your order #{{ order.id }} has been successfully paid",
+	  "template_type": "woocommerce",
+	  "message_text": "Dear <strong>{{ customer.name }}<\/strong>,\r\n\r\nThank you for your payment for <strong>order #{{ order.id }}<\/strong>.\r\n\r\nYou can check the order details below:\r\n\r\n{{ order.details | plaintext: 'no' }}\r\n\r\nIt will be shipped to the {{ order.shipping_address }},\u00a0 {{ order.shipping_city }}.\r\n\r\nYou will receive separate email once it will leave our warehouse.\r\n\r\nThanks for shopping with us!",
+	  "unsubscribe": "no",
+	  "_action_title": "Order Paid with Order - Items filter and order details placeholder",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

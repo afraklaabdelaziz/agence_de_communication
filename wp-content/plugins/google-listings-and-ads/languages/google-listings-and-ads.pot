@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Listings and Ads plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Listings and Ads 1.13.0\n"
+"Project-Id-Version: Google Listings and Ads 1.13.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-listings-and-ads\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-18T10:13:14+00:00\n"
+"POT-Creation-Date: 2022-05-25T16:42:26+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: google-listings-and-ads\n"
@@ -347,7 +347,7 @@ msgstr ""
 
 #: src/API/Google/Middleware.php:105
 #: src/API/Google/SiteVerification.php:57
-#: src/MerchantCenter/AccountService.php:420
+#: src/MerchantCenter/AccountService.php:421
 msgid "Invalid site URL."
 msgstr ""
 
@@ -1146,29 +1146,29 @@ msgid "Attempting invalid claim overwrite."
 msgstr ""
 
 #. translators: 1: is a string representing an unknown step name
-#: src/MerchantCenter/AccountService.php:335
+#: src/MerchantCenter/AccountService.php:336
 msgid "Unknown merchant account creation step %1$s"
 msgstr ""
 
-#: src/MerchantCenter/AccountService.php:367
+#: src/MerchantCenter/AccountService.php:368
 msgid "Unable to claim website URL with this Merchant Center Account."
 msgstr ""
 
 #. translators: 1: is a numeric account ID
-#: src/MerchantCenter/AccountService.php:399
+#: src/MerchantCenter/AccountService.php:400
 msgid "Merchant Center account already connected: %d"
 msgstr ""
 
 #. translators: 1: is a website URL (without the protocol)
-#: src/MerchantCenter/AccountService.php:448
+#: src/MerchantCenter/AccountService.php:449
 msgid "This Merchant Center account already has a verified and claimed URL, %1$s"
 msgstr ""
 
-#: src/MerchantCenter/MerchantCenterService.php:258
+#: src/MerchantCenter/MerchantCenterService.php:270
 msgid "No contact information."
 msgstr ""
 
-#: src/MerchantCenter/MerchantCenterService.php:259
+#: src/MerchantCenter/MerchantCenterService.php:271
 msgid "Add store contact information"
 msgstr ""
 
@@ -1182,10 +1182,6 @@ msgstr ""
 
 #: src/MerchantCenter/MerchantStatuses.php:394
 msgid "All products"
-msgstr ""
-
-#: src/MerchantCenter/MerchantStatuses.php:397
-msgid "Read more about this account issue"
 msgstr ""
 
 #: src/MerchantCenter/MerchantStatuses.php:524
@@ -1275,6 +1271,7 @@ msgstr ""
 
 #: src/Notes/SetupCampaign.php:81
 #: js/build/index.js:21
+#: js/build/index.js:28
 #: js/build/index.js:36
 msgid "Learn more"
 msgstr ""
@@ -2298,6 +2295,7 @@ msgid "I’ll set my tax rates up manually in <link>Google Merchant Center</link
 msgstr ""
 
 #: js/build/index.js:9
+#: js/build/index.js:13
 #: js/build/index.js:15
 msgid "Please specify at least one country."
 msgstr ""
@@ -2330,6 +2328,7 @@ msgid "Estimate a shipping rate"
 msgstr ""
 
 #: js/build/index.js:11
+#: js/build/index.js:13
 #: js/build/index.js:15
 #: js/build/index.js:17
 #: js/build/index.js:26
@@ -2345,7 +2344,7 @@ msgid "Add shipping rate"
 msgstr ""
 
 #: js/build/index.js:11
-#: js/build/index.js:15
+#: js/build/index.js:13
 #: js/build/index.js:17
 #: js/build/index.js:26
 msgid "Delete"
@@ -2391,6 +2390,27 @@ msgstr ""
 msgid "I offer free shipping for orders over a certain price"
 msgstr ""
 
+#: js/build/index.js:13
+msgid "The minimum order amount must be greater than 0."
+msgstr ""
+
+#: js/build/index.js:13
+#: js/build/index.js:15
+msgid "Minimum order to qualify for free shipping"
+msgstr ""
+
+#: js/build/index.js:13
+msgid "Then they qualify for free shipping if their order is over"
+msgstr ""
+
+#: js/build/index.js:13
+msgid "Add minimum order"
+msgstr ""
+
+#: js/build/index.js:13
+msgid "Update minimum order"
+msgstr ""
+
 #. translators: 1: list of country names separated by comma, up to 5 countries; 2: the remaining count of countries.
 #: js/build/index.js:14
 msgid "Minimum order for <strong>%1$s</strong> + %2$d more"
@@ -2399,26 +2419,6 @@ msgstr ""
 #. translators: 1: list of country names separated by comma.
 #: js/build/index.js:15
 msgid "Minimum order for <strong>%1$s</strong>"
-msgstr ""
-
-#: js/build/index.js:15
-msgid "The minimum order amount must be greater than 0."
-msgstr ""
-
-#: js/build/index.js:15
-msgid "Minimum order to qualify for free shipping"
-msgstr ""
-
-#: js/build/index.js:15
-msgid "Update minimum order"
-msgstr ""
-
-#: js/build/index.js:15
-msgid "Then they qualify for free shipping if their order is over"
-msgstr ""
-
-#: js/build/index.js:15
-msgid "Add minimum order"
 msgstr ""
 
 #: js/build/index.js:15
@@ -3386,6 +3386,22 @@ msgid "Product title"
 msgstr ""
 
 #: js/build/index.js:28
+msgid "Type"
+msgstr ""
+
+#: js/build/index.js:28
+msgid "Affected product"
+msgstr ""
+
+#: js/build/index.js:28
+msgid "Issue"
+msgstr ""
+
+#: js/build/index.js:28
+msgid "Suggested action"
+msgstr ""
+
+#: js/build/index.js:28
 msgid "All account issues resolved"
 msgstr ""
 
@@ -3402,28 +3418,20 @@ msgid "However, there are issues affecting your account that needs to be resolve
 msgstr ""
 
 #: js/build/index.js:28
+msgid "What to do?"
+msgstr ""
+
+#: js/build/index.js:28
+msgid "Read more about this issue"
+msgstr ""
+
+#: js/build/index.js:28
 #: js/build/index.js:30
 msgid "Issues to resolve"
 msgstr ""
 
 #: js/build/index.js:28
 msgid "An error occurred while retrieving issues. Please try again later."
-msgstr ""
-
-#: js/build/index.js:28
-msgid "Type"
-msgstr ""
-
-#: js/build/index.js:28
-msgid "Affected product"
-msgstr ""
-
-#: js/build/index.js:28
-msgid "Issue"
-msgstr ""
-
-#: js/build/index.js:28
-msgid "Suggested action"
 msgstr ""
 
 #: js/build/index.js:28

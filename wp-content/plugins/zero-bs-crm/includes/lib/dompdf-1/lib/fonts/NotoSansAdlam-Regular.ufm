@@ -1,0 +1,91 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+Copyright Copyright 2017-2019 Google LLC. All Rights Reserved.
+FontName Noto Sans Adlam
+FontSubfamily Regular
+UniqueID 3.000;GOOG;NotoSansAdlam-Regular
+FullName Noto Sans Adlam Regular
+Version Version 3.000; ttfautohint (v1.8.4) -l 8 -r 50 -G 200 -x 14 -D adlm -f none -a qsq -X ""
+PostScriptName NotoSansAdlam-Regular
+Trademark Noto is a trademark of Google LLC.
+Manufacturer JamraPatel LLC
+Designer Mark Jamra, Neil Patel
+FontVendorURL http://www.google.com/get/noto/
+FontDesignerURL https://www.jamra-patel.com
+LicenseDescription This Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.
+LicenseURL http://scripts.sil.org/OFL
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 50
+UnderlinePosition -100
+FontHeightOffset 0
+Ascender 1069
+Descender -293
+FontBBox -192 -241 1111 1004
+StartCharMetrics 361
+U 0 ; WX 0 ; N NULL ; G 74
+U 13 ; WX 250 ; N CR ; G 13
+U 32 ; WX 250 ; N space ; G 326
+U 33 ; WX 269 ; N exclam ; G 198
+U 34 ; WX 408 ; N quotedbl ; G 299
+U 35 ; WX 646 ; N numbersign ; G 268
+U 36 ; WX 572 ; N dollar ; G 187
+U 37 ; WX 831 ; N percent ; G 288
+U 38 ; WX 732 ; N ampersand ; G 146
+U 39 ; WX 225 ; N quotesingle ; G 307
+U 40 ; WX 300 ; N parenleft ; G 282
+U 41 ; WX 300 ; N parenright ; G 283
+U 42 ; WX 551 ; N asterisk ; G 152
+U 43 ; WX 557 ; N plus ; G 291
+U 44 ; WX 268 ; N comma ; G 174
+U 45 ; WX 302 ; N hyphen ; G 230
+U 46 ; WX 268 ; N period ; G 289
+U 47 ; WX 372 ; N slash ; G 325
+U 58 ; WX 268 ; N colon ; G 173
+U 59 ; WX 268 ; N semicolon ; G 314
+U 60 ; WX 558 ; N less ; G 257
+U 61 ; WX 545 ; N equal ; G 197
+U 62 ; WX 558 ; N greater ; G 218
+U 63 ; WX 434 ; N question ; G 296
+U 64 ; WX 883 ; N at ; G 153
+U 91 ; WX 329 ; N bracketleft ; G 166
+U 92 ; WX 372 ; N backslash ; G 158
+U 93 ; WX 329 ; N bracketright ; G 167
+U 94 ; WX 542 ; N asciicircum ; G 151
+U 95 ; WX 444 ; N underscore ; G 337
+U 123 ; WX 380 ; N braceleft ; G 164
+U 124 ; WX 517 ; N bar ; G 159
+U 125 ; WX 380 ; N braceright ; G 165
+U 160 ; WX 250 ; N uni00A0 ; G 262
+U 171 ; WX 510 ; N guillemotleft ; G 219
+U 187 ; WX 510 ; N guillemotright ; G 220
+U 1567 ; WX 538 ; N uni061F ; G 298
+U 1600 ; WX 245 ; N uni0640 ; G 243
+U 8211 ; WX 500 ; N endash ; G 196
+U 8212 ; WX 1000 ; N emdash ; G 195
+U 8213 ; WX 1000 ; N uni2015 ; G 139
+U 8216 ; WX 175 ; N quoteleft ; G 303
+U 8217 ; WX 175 ; N quoteright ; G 305
+U 8218 ; WX 243 ; N quotesinglbase ; G 306
+U 8219 ; WX 176 ; N quotereversed ; G 304
+U 8220 ; WX 359 ; N quotedblleft ; G 301
+U 8221 ; WX 359 ; N quotedblright ; G 302
+U 8222 ; WX 427 ; N quotedblbase ; G 300
+U 8224 ; WX 513 ; N dagger ; G 181
+U 8225 ; WX 502 ; N daggerdbl ; G 182
+U 8226 ; WX 318 ; N bullet ; G 168
+U 8230 ; WX 761 ; N ellipsis ; G 194
+U 8240 ; WX 1141 ; N perthousand ; G 290
+U 8249 ; WX 311 ; N guilsinglleft ; G 221
+U 8250 ; WX 311 ; N guilsinglright ; G 222
+U 8260 ; WX 128 ; N fraction ; G 206
+U 8271 ; WX 268 ; N uni204F ; G 312
+U 9676 ; WX 594 ; N uni25CC ; G 188
+U 11816 ; WX 532 ; N uni2E28 ; G 256
+U 11817 ; WX 531 ; N uni2E29 ; G 313
+U 11841 ; WX 268 ; N uni2E41 ; G 175
+EndCharMetrics
+EndFontMetrics

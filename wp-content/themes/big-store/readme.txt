@@ -3,8 +3,8 @@ Contributors: ThemeHunk
 Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, add_editor_style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
 Requires at least: WordPress 5.3
 Requires PHP: 5.3
-Tested up to: 5.8.1
-Stable tag: 1.7.8
+Tested up to: 5.9.2
+Stable tag: 1.8.9
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,6 +23,58 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+
+= 1.8.9 =
+
+* Style Issue fixed.
+
+= 1.8.8 =
+
+* Icon Improved.
+* competible with cart and search plugin.
+
+= 1.8.7 =
+
+* Custom add to cart link improved.
+* Catlog Product link improved.
+
+= 1.8.6 =
+
+* Footer issue fixed.
+* Rtl issue fixed.
+* Option panel improved.
+
+= 1.8.5 =
+* Compatibility issue fixed.
+
+= 1.8.4 =
+* Menu color issue fixed.
+
+= 1.8.3 =
+* footer issue fixed.
+
+= 1.8.2 =
+* Th option panel notification udpated.
+* Add pro and docs button in customizer.
+* Below footer copyright section disable.
+* Th all in one woo cart plugin added.
+* Th option panel sidebar text updated.
+* th all in one woo cart plugin class taiowc-fly-cart added.
+* Remove theme support for widget block editor.
+* Fix shopping cart icon issue.
+* Shop page no-sidebar issue fixed.
+* Th all in one woo cart make visible price.
+
+= 1.8.1 =
+* Icons disable in mobile issue resolved.
+* Th compare product style improved.
+
+= 1.8.0=
+* Th product compare plugin added.
+* Th advance product search pro plugin issue fixed.
+
+= 1.7.9=
+* Mega menu plugin removed recommended plugin section.
 
 = 1.7.8=
 * Child theme notification added.
@@ -168,9 +220,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= 1.7.8=
-* Child theme notification added.
-* Child theme notification text changed.
+= 1.8.1 =
+* Icons disable in mobile issue resolved.
 
 == Resources ==
  

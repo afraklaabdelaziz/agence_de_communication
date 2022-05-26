@@ -582,9 +582,18 @@ big_store_css( 'big_store_below_hd_bg_clr','background', '.below-header:before')
 big_store_css( 'big_store_category_text_clr','color', '.menu-category-list .toggle-title,.toggle-icon');
 big_store_css( 'big_store_category_icon_clr','background', '.below-header .cat-icon span');
 //header icon
-big_store_css( 'big_store_sq_icon_bg_clr','background', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search');
-big_store_css( 'big_store_sq_icon_clr','color', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search');
-big_store_css( 'big_store_sq_icon_clr','background', '.cat-icon span');
+big_store_css( 'big_store_sq_icon_bg_clr','background', '.header-icon a ,.header-support-icon a.whishlist ,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search,.thunk-icon .taiowc-icon, .thunk-icon .taiowc-cart-item,.thunk-icon .taiowcp-icon, .thunk-icon .taiowcp-cart-item,.header-icon a, .sticky-header-col3 .header-icon a, .sticky-header-col3 .header-icon a.prd-search-icon > .tapsp-search-box > .th-icon, .sticky-header-col3 .header-icon a.prd-search-icon > .thaps-search-box > .th-icon,.header-icon a.prd-search-icon > .tapsp-search-box > .th-icon');
+wp.customize( 'big_store_sq_icon_clr', function( setting ){
+        setting.bind( function( cssval ){
+                var dynamicStyle = '';
+                 dynamicStyle += '.header-icon a ,.header-support-icon a.whishlist ,.header-support-icon a.whishlist i,.thunk-icon .cart-icon a.cart-contents i,.cat-icon,.sticky-header .header-icon a , .sticky-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .header-support-icon a,.responsive-main-header .thunk-icon .cart-icon a.cart-contents,.responsive-main-header .menu-toggle .menu-btn,.sticky-header-bar .menu-toggle .menu-btn,.header-icon a.account,.header-icon a.prd-search,.header-support-icon a.compare i, .header-support-icon a.wishlist i, .header-icon a.account, .thunk-icon .taiowc-content .taiowc-total,.thunk-icon .taiowcp-content .taiowcp-total,.thunk-icon .taiowc-content .taiowc-total,.header-icon a, .sticky-header-col3 .header-icon a, .sticky-header-col3 .header-icon a.prd-search-icon > .tapsp-search-box > .th-icon, .sticky-header-col3 .header-icon a.prd-search-icon > .thaps-search-box > .th-icon,.thunk-icon .taiowcp-icon ,.header-support-icon .taiowcp-icon .th-icon, .header-support-icon .taiowc-icon .th-icon, .sticky-header-col3 .taiowcp-icon .th-icon, .sticky-header-col3 .taiowc-icon .th-icon, .taiowcp-content .taiowcp-total, .taiowc-content .taiowcp-total,.header-support-icon a.whishlist span, .header-support-icon a.compare span,.header-icon a.prd-search-icon > .tapsp-search-box > .th-icon{ color: ' + cssval + '!important} ';
+                 dynamicStyle += '.cat-icon span{ background: ' + cssval + '} ';
+                 dynamicStyle += '.thunk-icon .taiowc-icon svg{fill: ' + cssval + '} ';
+                big_store_add_dynamic_css( 'big_store_sq_icon_clr', dynamicStyle );
+
+        } );
+    } );
+
 //menu
 big_store_css( 'big_store_menu_link_clr','color', '.big-store-menu > li > a,.menu-category-list .toggle-title,.toggle-icon');
 big_store_css( 'big_store_menu_link_hvr_clr','color', '.big-store-menu > li > a:hover');

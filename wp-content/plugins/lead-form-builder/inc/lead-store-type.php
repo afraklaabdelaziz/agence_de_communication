@@ -129,7 +129,7 @@ function lfb_phpmailer_send($phpmailer){
               //user email send
 
        if(!empty($user_email['user_email_settings'])){
-           $usermail_option = $user_email['user_email_settings']['user-email-setting-option'];
+           $usermail_option = $user_email['user_email_settings']['user_email_setting']['user-email-setting-option'];
              $emailid =       $user_email['emailid'];
 
             if(($usermail_option =="ON") && ($emailid !='invalid_email') && is_email($emailid)){

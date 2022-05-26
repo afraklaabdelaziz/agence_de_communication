@@ -1,0 +1,5 @@
+Note: this is a modified version of dompdf, as follows (search ZBSMOD in directory for your ease)
+- Removes font files (to trim size, we're using our own)
+- Remove 'sample-fonts' directory from bundled php-font-lib
+- Remove 'tests' directory from bundled php-font-lib + phpunit file
+- Remove 'tests' directory from bundled php-css-parser + phpunit file

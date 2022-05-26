@@ -1,0 +1,32 @@
+{
+  "name": "Thank you email for 5-star review with coupon code",
+  "description": "Automated email in which you will thank your customer for a product review. It will trigger for 5-star reviews only and contains optional coupon code.",
+  "event": {
+	"slug": "review_event_published",
+	"data": []
+  },
+  "filters": {
+	"1": {
+	  "2": {
+		"data": {
+		  "condition": "is",
+		  "value": "5"
+		},
+		"filter_slug": "review_product_rating"
+	  }
+	}
+  },
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "\u2b50 Thank you for your review! \u2b50",
+	  "heading_value": "No words can describe, how thankful we are!",
+	  "template_type": "woocommerce",
+	  "message_text": "Dear <strong>{{ customer.first_name }}<\/strong>\r\n\r\nWe are delighted by your words, and the fact that you gave us a<strong> 5-star review<\/strong>! It means a lot to us.\r\n\r\nIn return, we also have something for you. Here's a <strong>10% discount coupon code<\/strong>, which can use in our store for your next purchase.\r\n<p style=\"text-align: center;\"><strong>{{ shop.coupon }}<\/strong><\/p>\r\nWith warm regards,",
+	  "unsubscribe": "no",
+	  "_action_title": "Thank you email for 5 star review",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

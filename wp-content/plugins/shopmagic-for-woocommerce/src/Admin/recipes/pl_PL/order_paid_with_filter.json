@@ -1,0 +1,36 @@
+{
+   "name":"Automatyzacja dla opłaconych zamówień z filtrem produktów i z wykorzystaniem placeholdera {{order.details}}",
+   "description":"Wiadomość e-mail z potwierdzeniem płatności, uruchamiana, gdy zamówienie otrzyma status w trakcie realizacji lub zrealizowane. Zawiera opcjonalny filtr, aby ograniczyć jej użycie do określonego produktu.",
+   "event":{
+      "slug":"shopmagic_order_status_paid",
+      "data":{
+         "check_defer":"yes"
+      }
+   },
+   "filters":{
+      "1":{
+         "2":{
+            "data":{
+               "condition":"matches_any",
+               "products_ids":[
+
+               ]
+            },
+            "filter_slug":"shopmagic_product_purchased_filter"
+         }
+      }
+   },
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Potwierdzenie p\u0142atno\u015bci za zam\u00f3wienie #{{ order.id }}",
+         "heading_value":"Twoje zam\u00f3wienie #{{ order.id }} zosta\u0142o op\u0142acone!",
+         "template_type":"woocommerce",
+         "message_text":"Drogi <strong>{{ customer.name }}<\/strong>,\r\n\r\nDzi\u0119kujemy Ci za dokonanie p\u0142atno\u015bci za zam\u00f3wienie <strong>#{{ order.id }}.<\/strong>\r\n\r\nOto podsumowanie Twojego zam\u00f3wienia:\r\n\r\n{{ order.details | plaintext: 'no' }}\r\n\r\nZam\u00f3wione produkty, wy\u015blemy do {{ order.shipping_address }},\u00a0 {{ order.shipping_city }}.\r\n\r\nOtrzymasz osobne powiadomienie, gdy Twoje zam\u00f3wienie opu\u015bci nasz magazyn.\r\n\r\nDzi\u0119kujemy za zaufanie!",
+         "unsubscribe":"no",
+         "_action_title":"Automatyzacja dla op\u0142aconych zam\u00f3wie\u0144 z filtrem produkt\u00f3w i z wykorzystaniem placeholdera {{order.details}}",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

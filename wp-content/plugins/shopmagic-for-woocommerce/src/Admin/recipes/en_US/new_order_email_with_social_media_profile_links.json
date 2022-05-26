@@ -1,0 +1,22 @@
+{
+  "name": "New Order email with social media profile links",
+  "description": "Automation which triggers welcome email for new order with an option to add links to your social media profiles.",
+  "event": {
+	"slug": "shopmagic_order_new_event",
+	"data": []
+  },
+  "filters": [],
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Welcome \ud83d\udc4b to our store!",
+	  "heading_value": "It's great to have you onboard {{ customer.first_name }}",
+	  "template_type": "woocommerce",
+	  "message_text": "Hi there!\r\n\r\nThank you for your <strong>order #{{ order.id }}<\/strong>.\r\n\r\nHere are your ordered products:\r\n\r\n{{ order.products_ordered | template: 'unordered_list' }}\r\n\r\nIf you have any questions or concerns, please contact us by replying to this message.\r\n\r\nStay up to date with us and follow us on <a href=\"#\">Instagram<\/a> and <a href=\"#\">Facebook<\/a>.",
+	  "unsubscribe": "no",
+	  "_action_title": "New Order email with social media profile links",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

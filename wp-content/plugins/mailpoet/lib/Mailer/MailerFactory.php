@@ -92,7 +92,7 @@ class MailerFactory {
         $mailerMethod = new SMTP(
           $mailerConfig['host'],
           $mailerConfig['port'],
-          $mailerConfig['authentication'],
+          (int)$mailerConfig['authentication'],
           $mailerConfig['encryption'],
           $sender,
           $replyTo,

@@ -15,7 +15,6 @@ use MailPoet\Entities\SegmentEntity;
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Exception;
 use MailPoet\Listing;
-use MailPoet\Models\Subscriber;
 use MailPoet\Segments\SegmentsRepository;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Subscribers\ConfirmationEmailMailer;
@@ -117,7 +116,7 @@ class Subscribers extends APIEndpoint {
   private function preferUnsubscribedStatusFromSegment(array $subscriber, $segmentId) {
     $segmentStatus = $this->findSegmentStatus($subscriber, $segmentId);
 
-    if ($segmentStatus === Subscriber::STATUS_UNSUBSCRIBED) {
+    if ($segmentStatus === SubscriberEntity::STATUS_UNSUBSCRIBED) {
       $subscriber['status'] = $segmentStatus;
     }
     return $subscriber;

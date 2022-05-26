@@ -1,0 +1,27 @@
+{
+   "name":"Email wysyłany na 7 dni przed końcem subskrypcji",
+   "description":"Automatyzacja przypominająca o zakończeniu okresu subskrypcji. Wysyłana jest na 7 dni przed końcem subskrypcji. Okres ten można swobodnie zmieniać i dostosować do swoich potrzeb.",
+   "event":{
+      "slug":"subscription_before_end_event",
+      "data":{
+         "subscription_days_before":"7",
+         "subscription_checktime":"[\"16\",\"00\"]"
+      }
+   },
+   "filters":[
+
+   ],
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Ostatnia szansa na odnowienie Twojej subskrypcji #{{ subscription.id }}",
+         "heading_value":"Twoja subskrypcja #{{ subscription.id }} wyga\u015bnie za 7 dni",
+         "template_type":"woocommerce",
+         "message_text":"Witaj {{ customer.first_name }},\r\n\r\nDlaczego odnowienie jest tak wa\u017cne?\r\n\r\nAktywna subskrypcja gwarantuje:\r\n<ul>\r\n \t<li>dost\u0119p do naszego <strong>wsparcia<\/strong>,<\/li>\r\n \t<li><strong>aktualizacje<\/strong>, poprawki b\u0142\u0119d\u00f3w i <strong>nowe funkcje<\/strong>,<\/li>\r\n \t<li>sta\u0142e ceny, o ile b\u0119dziesz kontynuowa\u0107 subskrypcj\u0119.<\/li>\r\n<\/ul>\r\nNadal mo\u017cesz odnowi\u0107 swoj\u0105 subskrypcj\u0119. Aby to zrobi\u0107, zaloguj si\u0119 na swoje <a href=\"#\">konto<\/a> i w\u0142\u0105cz automatyczne odnawianie. Je\u015bli nie odnowisz subskrypcji, utracisz dost\u0119p do pomocy technicznej, aktualizacji i pobra\u0144.\r\n\r\n<strong>Co dalej, je\u015bli odnowi\u0119 subskrypcj\u0119?<\/strong>\r\n\r\nProces p\u0142atno\u015bci jest zautomatyzowany, wi\u0119c nie musisz ju\u017c nic robi\u0107. Upewnij si\u0119 jedynie, \u017ce masz aktywn\u0105 metod\u0119 p\u0142atno\u015bci {{ subscription.payment_method }}, i wystarczaj\u0105ce \u015brodki {{ subscription.total }}.",
+         "unsubscribe":"no",
+         "_action_title":"Email wysy\u0142any na 7 dni przed ko\u0144cem subskrypcji",
+         "_action":"shopmagic_sendemail_action"
+      }
+   ]
+}

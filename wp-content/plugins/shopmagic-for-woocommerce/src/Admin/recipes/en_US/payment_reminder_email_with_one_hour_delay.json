@@ -1,0 +1,30 @@
+{
+  "name": "Payment reminder with 1 hour delay",
+  "description": "Payment reminder email for orders with pending status. It will be sent 1 hour after the order will receive the pending status, only if customer did not finish the purchase.",
+  "event": {
+	"slug": "shopmagic_order_pending_event",
+	"data": {
+	  "check_defer": "yes"
+	}
+  },
+  "filters": [],
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Looks like that you have an unpaid order {{ order.id }}",
+	  "heading_value": "Hi {{ customer.name }},",
+	  "template_type": "woocommerce",
+	  "message_text": "We've noticed that there's unpaid order on your account.\r\n\r\nHere are the details of this order:\r\n\r\n{{ order.details | plaintext: 'no' }}\r\n\r\nNo need to login into your account. You can conveniently pay for this order, by clicking on the link below:\r\n<p style=\"text-align: center;\"><a href=\"{{ order.payment_url }}\">Pay for order<\/a><\/p>\r\nSee you soon,",
+	  "unsubscribe": "no",
+	  "_action_title": "Payment reminder with 1 hour delay",
+	  "_action": "shopmagic_sendemail_action",
+	  "_action_delay_nbr": 1,
+	  "_action_delay_step": "hours",
+	  "_action_delayed": "on",
+	  "_action_schedule_type": "delay",
+	  "_action_variable_string": "",
+	  "_action_delayed_offset_time": 3600
+	}
+  ]
+}

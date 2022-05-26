@@ -1,0 +1,25 @@
+{
+  "name": "7 days before the end of subscription email",
+  "description": "Automation which reminds about the end of subscription. It is sent 7 days before the end of subscription, but you can change and adjust this time period to your needs.",
+  "event": {
+	"slug": "subscription_before_end_event",
+	"data": {
+	  "subscription_days_before": "7",
+	  "subscription_checktime": "[\"16\",\"00\"]"
+	}
+  },
+  "filters": [],
+  "actions": [
+	{
+	  "to_value": "{{ customer.email }}",
+	  "bcc_value": "",
+	  "subject_value": "Last chance to renew your subscription #{{ subscription.id }}",
+	  "heading_value": "Your subscription #{{ subscription.id }} is going to end in 7 days",
+	  "template_type": "woocommerce",
+	  "message_text": "Hi {{ customer.first_name }},\r\n\r\nWe want to let you know that your subscription ends in 7 days.\r\n\r\n<strong>Why is the renewal so important?<\/strong>\r\n\r\nYou will get:\r\n<ul>\r\n \t<li>access to our <strong>support<\/strong>,<\/li>\r\n \t<li><strong>updates<\/strong>, bug fixes, and <strong>new features<\/strong>,<\/li>\r\n \t<li>fixed prices long as you will continue the subscription.<\/li>\r\n<\/ul>\r\nYou can still renew your subscription. To do this please log in into <a href=\"#\">your account<\/a> and enable the auto-renewal. If you don't renew your subscription, you will lose access to support, updates, and downloads.\r\n\r\n<strong>What's next if I renew my subscription?<\/strong>\r\n\r\nThe payment process is automated, so you <strong>don't need to do anything<\/strong>. To do it smoothly, please make sure that your payment method {{ subscription.payment_method }} is active, and you have sufficient funds {{ subscription.total }}.",
+	  "unsubscribe": "no",
+	  "_action_title": "7 days before the end of subscription email",
+	  "_action": "shopmagic_sendemail_action"
+	}
+  ]
+}

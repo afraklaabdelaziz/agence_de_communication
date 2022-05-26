@@ -35,6 +35,7 @@ use Google\Ads\GoogleAds\V9\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V9\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V9\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V9\Services\MerchantCenterLinkServiceClient;
+use Google\Ads\GoogleAds\V9\Services\ShoppingPerformanceViewServiceClient;
 use Google\ApiCore\PathTemplate;
 
 /**
@@ -338,6 +339,20 @@ final class ResourceNames
         return MerchantCenterLinkServiceClient::merchantCenterLinkName(
             $customerId,
             $merchantCenterId
+        );
+    }
+
+    /**
+     * Generates a resource name of shopping performance view type.
+     *
+     * @param string $customerId
+     * @return string the shopping performance view resource name
+     */
+    public static function forShoppingPerformanceView(
+        $customerId
+    ): string {
+        return ShoppingPerformanceViewServiceClient::shoppingPerformanceViewName(
+            $customerId
         );
     }
 }

@@ -25,7 +25,11 @@
 
         }
         ?>
-        <button style="<?php echo $Bstyle; ?>"; class="button activate-now <?PHP echo $class; ?>"><?php _e($btn_text,'big-store'); ?></button>
+        <button style="<?php echo esc_attr($Bstyle); ?>" class="button activate-now <?php echo esc_attr($class); ?>">
+
+            <?php echo esc_html($btn_text);?>
+                
+        </button>
 		
          </p>
 		 	 
@@ -37,13 +41,11 @@
 
 <!--- tab third -->
 
-
-
-
-
 <!--- tab second -->
+
 <div class="theme_link">
-    <h3><?php _e('3. Customize Your Website','big-store'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
+    <h3><?php _e('3. Customize Your Website','big-store'); ?></h3>
+
     <p><?php _e('Big Store theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel','big-store'); ?></p>
     <p>
     <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary"><?php _e("Start Customize","big-store"); ?></a>

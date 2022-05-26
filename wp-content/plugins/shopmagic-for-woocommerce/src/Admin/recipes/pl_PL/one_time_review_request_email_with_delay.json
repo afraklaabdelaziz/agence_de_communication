@@ -1,0 +1,40 @@
+{
+   "name":"Jednorazowa prośba o recenzję z 7-dniowym opóźnieniem",
+   "description":"Automatyzacja z prośbą o recenzję, która zostanie wysłana tylko raz do konkretnego klienta. Automatyzacja ta ma ustawione 7-dniowe opóźnienie, aby klient mógł się dobrze zapoznać z produktem.",
+   "event":{
+      "slug":"shopmagic_order_completed_event",
+      "data":{
+         "check_defer":"yes"
+      }
+   },
+   "filters":{
+      "1":{
+         "2":{
+            "data":{
+               "condition":"less_than",
+               "value":"2"
+            },
+            "filter_slug":"customer_automation_count"
+         }
+      }
+   },
+   "actions":[
+      {
+         "to_value":"{{ customer.email }}",
+         "bcc_value":"",
+         "subject_value":"Czekamy na Twoj\u0105 recenzj\u0119!",
+         "heading_value":"Jak wra\u017cenia z u\u017cytkowania zam\u00f3wionego produktu? Daj nam zna\u0107!",
+         "template_type":"woocommerce",
+         "message_text":"Cze\u015b\u0107 <strong>{{ customer.first_name }}<\/strong>,\r\n\r\nNajprawdopodobniej, {{ order.products_ordered | template: 'comma_separated_list' }} jest ju\u017c w Twoich r\u0119kach.\r\n\r\nChcieliby\u015bmy dowiedzie\u0107 si\u0119, czy zam\u00f3wione produkty spe\u0142ni\u0142y Twoje oczekiwania. Mo\u017ce jest co\u015b, co mo\u017cemy poprawi\u0107?\r\n\r\nDaj nam zna\u0107, lub <strong>zrecenzuj<\/strong> produkty. Zale\u017cy nam na Twojej ocenie.\r\n\r\n{{ order.products_ordered_review_links | template: 'grid_2_col' }}\r\n\r\nDzi\u0119kujemy!",
+         "unsubscribe":"no",
+         "_action_title":"Jednorazowa pro\u015bba o recenzj\u0119 z 7-dniowym op\u00f3\u017anieniem",
+         "_action":"shopmagic_sendemail_action",
+         "_action_delay_nbr":7,
+         "_action_delay_step":"days",
+         "_action_delayed":"on",
+         "_action_schedule_type":"delay",
+         "_action_variable_string":"",
+         "_action_delayed_offset_time":604800
+      }
+   ]
+}

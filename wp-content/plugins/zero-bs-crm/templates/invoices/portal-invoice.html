@@ -1,0 +1,78 @@
+<div class='container-fluid zbs-invoice-portal-inner' style="max-width:1200px;margin-left:auto;margin-right:auto;">
+
+        <div class='status-total zbs-invoice-box'>
+            ###TOPSTATUS###
+        </div>
+        <div class="zbs-invoice-box zbs-logo-portal">
+            <div style="width:100%;display:block">
+                <div id="zbs_invoice_logos" style="width:48%;display:inline-block;vertical-align: top;" class="###LOGOCLASS###">
+                    <img id="wh-logo-set-img" src="###LOGOURL###" style="max-width:100%;max-height:100px" />
+                    <div class='clear' style="clear:both"></div>
+                </div>
+                <div class='zbs-invoice-topper zbs-portal-inv-deets' style="width:48%;display:inline-block;vertical-align: top;">
+                    <div class='inv-num'>###INVNOSTR###</div>
+                    <div class='date'>###INVDATESTR###</div>
+                    <div class='date'>###PAYMENTTERMS### ###DUEDATE###</div>
+                    ##INV-CUSTOM-FIELDS##
+                    <div class='clear' style="clear:both"></div>
+                </div>
+                <div class='clear' style="clear:both"></div>
+            </div>
+            <div class='clear' style="clear:both"></div>
+        </div>
+        <div class='clear' style="clear:both"></div>
+        <div class='zbs-invoice-box'>
+            <div id="zbs-business-info-wrapper">
+                <div class="business-info ###BIZCLASS###">
+                    ##BIZ-INFO##
+      	        </div>
+            </div>
+            <div id="zbs-customer-info-wrapper">
+                    ###CUSTINFOTABLE###
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="clear"></div>
+        <div id="zbs-invoice-items" class='zbs-invoice-box'>
+            <table class='table table-striped' style="width:100%">
+                <thead>
+                    <tr>
+                         ###TABLEHEADERS###
+                    </tr>
+                </thead>
+                <div class='zbs-table-block'>
+                    ###LINEITEMS###
+                </div>
+            </table>
+
+            ##INVOICE-TOTALS-TABLE##
+              
+            <div id="crm-invoice-partials">
+                <table style="width:100%; margin-top: 30px;">
+                    <tr>
+                        <td style="width:50%">##PRE-INVOICE-PAYMENT-DETAILS##</td>
+                        <td>##INVOICE-PARTIALS-TABLE##</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        
+
+        <div class='zbs-invoice-box'>
+            <div class='zbs-invoice-pull-left'>
+                ##INVOICE-PAYMENT-DETAILS##
+            </div>
+            <div class="zbs-invoice-thanks"> <!-- .zbs-invoice-pull-right -->
+                <div class='pay-options'>
+                    ###PAYPALBUTTON###
+                </div>
+                <div class='pay-thanks'>
+                    ###PAYTHANKS###
+                </div>
+            </div>
+            <div class='clear'></div>
+        </div>
+       
+</div> <!-- end container -->

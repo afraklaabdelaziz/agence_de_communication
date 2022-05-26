@@ -68,6 +68,7 @@ class FreeCachedContainer extends Container
             'MailPoet\\API\\MP\\v1\\Subscribers' => 'getSubscribers2Service',
             'MailPoet\\AdminPages\\PageRenderer' => 'getPageRendererService',
             'MailPoet\\AdminPages\\Pages\\Automation' => 'getAutomationService',
+            'MailPoet\\AdminPages\\Pages\\AutomationEditor' => 'getAutomationEditorService',
             'MailPoet\\AdminPages\\Pages\\ExperimentalFeatures' => 'getExperimentalFeaturesService',
             'MailPoet\\AdminPages\\Pages\\FormEditor' => 'getFormEditorService',
             'MailPoet\\AdminPages\\Pages\\Forms' => 'getForms2Service',
@@ -833,6 +834,16 @@ class FreeCachedContainer extends Container
     }
 
     /**
+     * Gets the public 'MailPoet\AdminPages\Pages\AutomationEditor' shared autowired service.
+     *
+     * @return \MailPoet\AdminPages\Pages\AutomationEditor
+     */
+    protected function getAutomationEditorService()
+    {
+        return $this->services['MailPoet\\AdminPages\\Pages\\AutomationEditor'] = new \MailPoet\AdminPages\Pages\AutomationEditor(($this->services['MailPoet\\Automation\\Engine\\Storage\\WorkflowStorage'] ?? ($this->services['MailPoet\\Automation\\Engine\\Storage\\WorkflowStorage'] = new \MailPoet\Automation\Engine\Storage\WorkflowStorage())), ($this->services['MailPoet\\AdminPages\\PageRenderer'] ?? $this->getPageRendererService()), ($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())));
+    }
+
+    /**
      * Gets the public 'MailPoet\AdminPages\Pages\ExperimentalFeatures' shared autowired service.
      *
      * @return \MailPoet\AdminPages\Pages\ExperimentalFeatures
@@ -1189,7 +1200,7 @@ class FreeCachedContainer extends Container
      */
     protected function getWorkflowsGetEndpointService()
     {
-        return $this->services['MailPoet\\Automation\\Engine\\Endpoints\\Workflows\\WorkflowsGetEndpoint'] = new \MailPoet\Automation\Engine\Endpoints\Workflows\WorkflowsGetEndpoint();
+        return $this->services['MailPoet\\Automation\\Engine\\Endpoints\\Workflows\\WorkflowsGetEndpoint'] = new \MailPoet\Automation\Engine\Endpoints\Workflows\WorkflowsGetEndpoint(($this->services['MailPoet\\Automation\\Engine\\Storage\\WorkflowStorage'] ?? ($this->services['MailPoet\\Automation\\Engine\\Storage\\WorkflowStorage'] = new \MailPoet\Automation\Engine\Storage\WorkflowStorage())));
     }
 
     /**

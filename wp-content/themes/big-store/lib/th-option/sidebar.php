@@ -1,12 +1,18 @@
 <div class="sidebar-section">
             <div class="section">
             <h3 class="hndle ui-sortable-handle">
-                <span><?php _e('Big Store Pro WordPress Theme','big-store'); ?> </span>
+                <span><?php _e('Big Store Premium Theme','big-store'); ?> </span>
             </h3>
             <p>
-            <b><?php _e('Pre-made premium templates','big-store'); ?> </b><br>
-            <?php _e('Big Store Pro is one of the most popular eCommerce theme on WordPress.','big-store'); ?> </p>
-                <center><a class="button ztabtn" target="_blank" href="https://themehunk.com/product/big-store/"><?php _e('Upgrade','big-store'); ?> </a></center>
+            <?php _e('If you like the free version of this theme, you will LOVE the full version of Big Store which includes numerous  Advanced features, Custom Sections, Section Ordering and more useful options to customize your website.','big-store'); ?> </p>
+                <center><a class="button ztabtn" target="_blank" href="https://themehunk.com/product/big-store/"><?php _e('Upgrade To Big Store Premium','big-store'); ?> </a></center>
+            </div>
+            <hr>
+            <div class="section">
+                <h3><?php _e('Why Upgrade?','big-store'); ?></h3>
+                <p><?php _e('Upgrading to Big Store Premium you will unlock dozen of unique features that will take your website to the next level. See the Comparison table for more details.','big-store'); ?> </p>
+                 <center><a class="button button-primary" target="_blank" href="https://themehunk.com/product/big-store/#tabfix"><?php _e('View Big Store Premium Demo','big-store'); ?> </a></center>
+
             </div>
             <hr>
             <div class="section">
